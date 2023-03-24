@@ -1,8 +1,10 @@
 from flask import Flask, render_template
 
+from controllers.paints_controller import paints_blueprint
+
 app = Flask(__name__)
 
-# from controllers import BOILERPLATE
+app.register_blueprint(paints_blueprint)
 
 @app.route("/")
 def home():

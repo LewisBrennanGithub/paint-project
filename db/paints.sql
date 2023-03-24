@@ -9,6 +9,6 @@ CREATE TABLE paints (
   popularity int
 );
 
-INSERT INTO paints (name, description, value, offset_value, popularity) VALUES ('Red', 'Generic red paint!', '#FF0000', '#0000FF' 1);
+INSERT INTO paints (name, description, value, offset_value, popularity) VALUES ('Red', 'Generic red paint!', '#FF0000', '#0000FF', 1);
 
-INSERT INTO paints (name, description, value, offset_value, popularity) VALUES ('Green', 'Generic green paint!', '#00FF00', '#FF00FF' 2);  
+INSERT INTO paints (name, description, value, offset_value, popularity) VALUES ('Green', 'Generic green paint!', '#00FF00', '#FF00FF', 2);  
