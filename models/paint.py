@@ -1,5 +1,13 @@
-import numpy as np
+class Paint:
+    
+    def __init__ (self, name, description, initial_value, initial_offset_value, popularity = 0, id = None):
+        self.name = name
+        self.description = description
+        self.value = initial_value
+        self.offset_value = initial_offset_value
+        self.popularity = popularity
+        self.id = id
 
-new_matrix = np.array([1,2,3],[4,5,6])
-
-print(new_matrix)
+    def update_value(self, new_value, new_offset_value):
+        self.value = new_value
+        self.offset_value = new_offset_value
