@@ -11,3 +11,5 @@ class Paint:
     def update_value(self, new_value, new_offset_value):
         self.value = new_value
         self.offset_value = new_offset_value
+
+    

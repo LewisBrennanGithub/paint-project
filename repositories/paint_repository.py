@@ -42,3 +42,12 @@ def update(paint):
     sql = "UPDATE paints SET (name, description, value, offset_value, popularity) = (%s, %s, %s, %s, %s) WHERE id = %s"
     values = [paint.name, paint.description, paint.value, paint.offset_value, paint.popularity, paint.id]
     run_sql(sql, values)
+
+def list_paints_limited():
+    paints = []
+    sql = "SELECT * FROM paints ORDER BY popularity DESC LIMIT 3"
+    results = run_sql(sql)
+    for row in results:
+        paint = Paint(row['name'], row['description'], row['value'], row['offset_value'], row['popularity'], row['id'])
+        paints.append(paint)
+    return paints

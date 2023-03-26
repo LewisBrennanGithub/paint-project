@@ -1,7 +1,16 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h1>QuestAdvisor</h1>
-
-<p>Find your perfect fantasy adventure!</p>
+{% for paint in paints %}
+<div>
+  <div>
+    <a href="/paints/{{paint.id}}">{{paint.name}}</a>
+  </div>
+</div>
+{% endfor %}
+<form method="POST" action="process-color.php">
+  <label for="color-picker">Pick a color:</label>
+  <input type="color" id="color-picker" name="color-picker" value="#ff0000">
+  <button type="submit">Submit Color</button>
+</form>
 {% endblock %}
