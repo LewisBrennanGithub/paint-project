@@ -15,11 +15,40 @@ def show(id):
     paint = paint_repository.select(id)
     return render_template("paints/show.html", paint=paint)
 
-@paints_blueprint.route("/paints/", methods=['POST'])
+@paints_blueprint.route("/paints/new", methods=['GET'])
 def new_paint():
+    paint = paint_repository.select_all()
+    return render_template("paints/new.html", paint = paint)
+
+@paints_blueprint.route("/paints/new", methods=['POST'])
+def create_paint():
     name = request.form['name']
     description = request.form['description']
     value = request.form['value']
-    paint = Paint(name, description, value)
-    paint_repository.save(paint)
-    return redirect("/paints/")
+    new_paint = Paint(name, description, value)
+    paint_repository.save_new_paint(new_paint)
+    return redirect('/paints')
+
+@paints_blueprint.route("/paints/<id>/delete", methods=['POST'])
+def delete_paint(id):
+    paint_repository.delete(id)
+    return redirect('/paints')
+
+# EDIT
+# GET '/books/<id>/edit'
+@paints_blueprint.route("/paints/<id>/edit", methods=['GET'])
+def edit_paint_page(id):
+    paint = paint_repository.select(id)
+    return render_template('paints/edit.html', paint=paint, id=id)
+
+# UPDATE
+# PUT '/books/<id>'
+@paints_blueprint.route("/paints/<id>/edit", methods=['GET', 'POST'])
+def update_paint(id):
+    name = request.form['name']
+    description = request.form['description']
+    value = request.form['value']
+    offset_value = request.form['offset_value']
+    paint = Paint(name, description, value, offset_value, id)
+    paint_repository.update_existing_paint(paint)
+    return redirect('/paints')

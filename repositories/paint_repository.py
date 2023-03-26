@@ -15,7 +15,7 @@ def select_all():
     sql = "SELECT * FROM paints"
     results = run_sql(sql)
     for row in results:
-        paint = Paint(row['name'], row['description'], row['value'], row['offset_value'], row['popularity'], row['id'])
+        paint = Paint(row['name'], row['description'], row['value'], row['popularity'], row['id'])
         paints.append(paint)
     return paints
 
@@ -26,7 +26,7 @@ def select(id):
     results = run_sql(sql, values)
     if results:
         result = results[0]
-        paint = Paint(result['name'], result['description'], result['value'], result['offset_value'], result['popularity'], result['id'])
+        paint = Paint(result['name'], result['description'], result['value'], result['popularity'], result['id'])
     return paint
 
 def delete_all():
@@ -45,9 +45,22 @@ def update(paint):
 
 def list_paints_limited():
     paints = []
-    sql = "SELECT * FROM paints ORDER BY popularity DESC LIMIT 3"
+    sql = "SELECT * FROM paints ORDER BY popularity DESC LIMIT 9"
     results = run_sql(sql)
     for row in results:
-        paint = Paint(row['name'], row['description'], row['value'], row['offset_value'], row['popularity'], row['id'])
+        paint = Paint(row['name'], row['description'], row['value'], row['popularity'], row['id'])
         paints.append(paint)
     return paints
+
+def save_new_paint(paint):
+    sql = "INSERT INTO paints (name, description, value) VALUES (%s, %s, %s) RETURNING *"
+    values = [paint.name, paint.description, paint.value]
+    results = run_sql(sql, values)
+    id = results[0]['id']
+    paint.id = id
+    return paint
+
+def update_existing_paint(paint):
+    sql = "UPDATE paints SET (name, description, value, offset_value) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [paint.name, paint.description, paint.value, paint.offset_value, paint.id]
+    run_sql(sql, values)

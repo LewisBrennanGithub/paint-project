@@ -1,0 +1,35 @@
+<head>
+  <style>
+    body {
+      background-color: {{ paint.value }};
+      color: {{ paint.offset_value }};
+    }
+  </style>
+</head>
+<body>
+  
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ paint.name }}</h1>
+  <p>Description: {{ paint.description }}</p>
+  <p>Value: {{ paint.value }}</p>
+  <p>Offset Value: #{{ paint.offset_value }}</p>
+  <form action="/paints/{{ paint.id }}/edit" method="post">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" value="{{ paint.name }}" required><br><br>
+    <label for="description">Description</label>
+    <input type="text" id="description" name="description" value="{{ paint.description }}"><br><br>
+    <label for="value">Value</label>
+    <input type="text" id="value" name="value" placeholder="#000000" pattern="#[a-zA-Z0-9]{6}" value="{{ paint.value }}" required><br><br>
+    <label for="offset_value">Offset Value</label>
+    <input type="text" id="offset_value" name="offset_value" placeholder="#FFFFFF" pattern="#[a-zA-Z0-9]{6}" value="{{ paint.offset_value }}" required><br><br>
+    <input type="submit" value="Submit">
+  </form>
+  <form action="{{paint.id}}/delete" method="POST">
+  <input type="submit" value="Delete">
+  </form>
+{% endblock %}
+{% block styles %}
+{% endblock %}
+</body>
