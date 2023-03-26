@@ -43,7 +43,7 @@ def edit_paint_page(id):
 
 # UPDATE
 # PUT '/books/<id>'
-@paints_blueprint.route("/paints/<id>/edit", methods=['GET', 'POST'])
+@paints_blueprint.route("/paints/<id>/edit", methods=['POST'])
 def update_paint(id):
     name = request.form['name']
     description = request.form['description']
