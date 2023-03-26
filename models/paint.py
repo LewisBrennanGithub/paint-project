@@ -19,10 +19,13 @@ class Paint:
         self.description = description
         self.value = initial_value
         self.offset_value = self.invert_colour(initial_value.lstrip('#'))
+        self.offset_override = False
         self.popularity = popularity
         self.id = id
 
     def invert_colour(self, hex_color):
+        if self.offset_override == True:
+            return hex_color
     # Convert hex color to RGB tuple
         rgb = tuple(int(hex_color[i:i+2], 16) for i in (0, 2 ,4))  
     # Invert each color component using bitwise NOT operation

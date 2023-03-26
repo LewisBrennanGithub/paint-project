@@ -6,7 +6,7 @@ import repositories.paint_repository as paint_repository
 paints_blueprint = Blueprint("paints", __name__)
 
 @paints_blueprint.route("/paints")
-def users():
+def main():
     paints = paint_repository.list_paints_limited() 
     return render_template("paints/index.html", paints = paints)
 
