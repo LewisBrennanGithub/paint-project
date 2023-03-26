@@ -18,7 +18,7 @@ class Paint:
         self.name = name
         self.description = description
         self.value = initial_value
-        self.offset_value = self.invert_colour(initial_value.lstrip('#'))
+        self.offset_value = self.invert_colour(initial_value.lstrip('#')) 
         self.popularity = popularity
         self.id = id
 
