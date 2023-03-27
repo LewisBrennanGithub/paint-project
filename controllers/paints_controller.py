@@ -24,7 +24,7 @@ def new_paint():
 def create_paint():
     name = request.form['name']
     description = request.form['description']
-    value = request.form['value']
+    value = request.form['colour-picker']
     popularity = 0
     new_paint = Paint(name, description, value, popularity)
     paint_repository.save_new_paint(new_paint)

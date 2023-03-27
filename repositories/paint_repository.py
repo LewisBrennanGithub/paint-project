@@ -1,5 +1,5 @@
 from db.run_sql import run_sql
-
+from helpers.invert import *
 from models.paint import Paint
 
 def save(paint):
@@ -45,7 +45,7 @@ def update(paint):
 
 def list_paints_limited():
     paints = []
-    sql = "SELECT * FROM paints ORDER BY popularity DESC LIMIT 9"
+    sql = "SELECT * FROM paints ORDER BY popularity DESC"
     results = run_sql(sql)
     for row in results:
         paint = Paint(row['name'], row['description'], row['value'], row['popularity'], row['id'])
@@ -53,8 +53,9 @@ def list_paints_limited():
     return paints
 
 def save_new_paint(paint):
-    sql = "INSERT INTO paints (name, description, value, popularity) VALUES (%s, %s, %s, %s) RETURNING *"
-    values = [paint.name, paint.description, paint.value, paint.popularity]
+    offset_value = invert_colour(paint.value)
+    sql = "INSERT INTO paints (name, description, value, offset_value, popularity) VALUES (%s, %s, %s, %s, %s) RETURNING *"
+    values = [paint.name, paint.description, paint.value, offset_value, paint.popularity]
     results = run_sql(sql, values)
     id = results[0]['id']
     paint.id = id
