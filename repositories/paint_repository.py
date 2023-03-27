@@ -26,7 +26,7 @@ def select(id):
     results = run_sql(sql, values)
     if results:
         result = results[0]
-        paint = Paint(result['name'], result['description'], result['value'], result['popularity'], result['id'])
+        paint = Paint(result['name'], result['description'], result['value'], result['offset_value'], result['popularity'], result['id'])
     return paint
 
 def delete_all():
@@ -48,7 +48,7 @@ def list_paints_limited():
     sql = "SELECT * FROM paints ORDER BY popularity DESC"
     results = run_sql(sql)
     for row in results:
-        paint = Paint(row['name'], row['description'], row['value'], row['popularity'], row['id'])
+        paint = Paint(row['name'], row['description'], row['value'], row['offset_value'], row['popularity'], row['id'])
         paints.append(paint)
     return paints
 
@@ -65,16 +65,6 @@ def update_existing_paint(paint):
     sql = "UPDATE paints SET (name, description, value, offset_value) = (%s, %s, %s, %s) WHERE id = %s"
     values = [paint.name, paint.description, paint.value, paint.offset_value, paint.id]
     run_sql(sql, values)
-
-def limited_select(id):
-    paint = None
-    sql = "SELECT * FROM paints WHERE id = %s"
-    values = [id]
-    results = run_sql(sql, values)
-    if results:
-        result = results[0]
-        paint = Paint(result['popularity'], result['id'], result['initial_value'])
-    return paint
 
 def decrement_paint_popularity(id):
     paint = select(id)

@@ -14,7 +14,7 @@
 
 class Paint:
     
-    def __init__ (self, name, description, initial_value, offset_value, popularity = 0, id = None):
+    def __init__ (self, name, description, initial_value, offset_value = "#000000", popularity = 0, id = None):
         self.name = name
         self.description = description
         self.value = initial_value
