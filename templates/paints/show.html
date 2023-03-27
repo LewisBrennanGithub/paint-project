@@ -15,6 +15,12 @@
   <p>Description: {{ paint.description }}</p>
   <p>Value: {{ paint.value }}</p>
   <p>Offset Value: #{{ paint.offset_value }}</p>
+  <form action="/paints/{{paint.id}}/decrement" method="POST">
+    <input type="submit" value="Decrement" id="decrement" name="decrement">
+  </form>
+  <form action="/paints/{{paint.id}}/increment" method="POST">
+    <input type="submit" value="Increment" id="increment" name="increment">
+  </form>
   <a href="/paints/{{paint.id}}/edit">Edit Paint</a>
   <form action="{{paint.id}}/delete" method="POST">
   <input type="submit" value="Delete">

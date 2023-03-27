@@ -22,13 +22,28 @@ class Paint:
         self.popularity = popularity
         self.id = id
 
-    def invert_colour(self, hex_color):
-    # Convert hex color to RGB tuple
-        rgb = tuple(int(hex_color[i:i+2], 16) for i in (0, 2 ,4))  
-    # Invert each color component using bitwise NOT operation
+    def invert_colour(self, hex_colour):
+        rgb = tuple(int(hex_colour[i:i+2], 16) for i in (0, 2 ,4))  
         inverted_rgb = tuple(~c & 0xff for c in rgb) 
-    # Convert back to hex format
         inverted_hex = '{:02x}{:02x}{:02x}'.format(*inverted_rgb)
         return inverted_hex
 
-        # self.update_override = False
+    def decrease_popularity(self):
+        self.popularity -= 1
+
+    def increase_popularity(self):
+        self.popularity += 1
+
+    
+
+
+        
+
+    # def invert_colour(self, hex_color):
+    # # Convert hex color to RGB tuple
+    #     rgb = tuple(int(hex_color[i:i+2], 16) for i in (0, 2 ,4))  
+    # # Invert each color component using bitwise NOT operation
+    #     inverted_rgb = tuple(~c & 0xff for c in rgb) 
+    # # Convert back to hex format
+    #     inverted_hex = '{:02x}{:02x}{:02x}'.format(*inverted_rgb)
+    #     return inverted_hex

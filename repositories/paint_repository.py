@@ -31,7 +31,7 @@ def select(id):
 
 def delete_all():
     sql = "DELETE FROM paints"
-    run_sql
+    run_sql(sql)
 
 def delete(id):
     sql = "DELETE FROM paints WHERE id = %s"
@@ -53,8 +53,8 @@ def list_paints_limited():
     return paints
 
 def save_new_paint(paint):
-    sql = "INSERT INTO paints (name, description, value) VALUES (%s, %s, %s) RETURNING *"
-    values = [paint.name, paint.description, paint.value]
+    sql = "INSERT INTO paints (name, description, value, popularity) VALUES (%s, %s, %s, %s) RETURNING *"
+    values = [paint.name, paint.description, paint.value, paint.popularity]
     results = run_sql(sql, values)
     id = results[0]['id']
     paint.id = id
@@ -64,3 +64,63 @@ def update_existing_paint(paint):
     sql = "UPDATE paints SET (name, description, value, offset_value) = (%s, %s, %s, %s) WHERE id = %s"
     values = [paint.name, paint.description, paint.value, paint.offset_value, paint.id]
     run_sql(sql, values)
+
+def limited_select(id):
+    paint = None
+    sql = "SELECT * FROM paints WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        paint = Paint(result['popularity'], result['id'], result['initial_value'])
+    return paint
+
+def decrement_paint_popularity(id):
+    paint = select(id)
+    paint.decrease_popularity()
+    sql = "UPDATE paints SET popularity = %s WHERE id = %s"
+    values = [paint.popularity, paint.id]
+    run_sql(sql, values)
+
+def increment_paint_popularity(id):
+    paint = select(id)
+    paint.increase_popularity()
+    sql = "UPDATE paints SET popularity = %s WHERE id = %s"
+    values = [paint.popularity, paint.id]
+    run_sql(sql, values)
+
+# def decrement_paint_popularity(id):
+#     paint = select(id)
+#     paint.decrease_popularity()
+#     sql = "UPDATE paints SET popularity = %s WHERE id = %s"
+#     values = [paint.popularity, paint.id]
+#     run_sql(sql, values)
+
+# def increment_paint_popularity(id):
+#     paint = select(id)
+#     if paint:
+#         paint.increase_popularity()
+#         sql = "UPDATE paints SET popularity = %s WHERE id = %s"
+#         values = [paint.popularity, paint.id]
+#         run_sql(sql, values)
+
+# def decrement_paint_popularity(paint_id):
+#     sql = "UPDATE paints SET popularity = (%s) WHERE id = %s"
+#     values = [paint_id]
+#     run_sql(sql, values)
+
+
+# def increment_paint_popularity(paint_id):
+#     sql = "UPDATE paints SET popularity = (%s)  WHERE id = %s"
+#     values = [paint_id]
+#     run_sql(sql, values)
+
+# def decrement_paint_popularity(paint_id):
+#     sql = "UPDATE paints SET popularity = popularity - 1 WHERE id = %s"
+#     values = [paint_id]
+#     run_sql(sql, values)
+
+# def increment_paint_popularity(paint_id):
+#     sql = "UPDATE paints SET popularity = popularity + 1 WHERE id = %s"
+#     values = [paint_id]
+#     run_sql(sql, values)

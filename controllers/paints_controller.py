@@ -25,7 +25,8 @@ def create_paint():
     name = request.form['name']
     description = request.form['description']
     value = request.form['value']
-    new_paint = Paint(name, description, value)
+    popularity = 0
+    new_paint = Paint(name, description, value, popularity)
     paint_repository.save_new_paint(new_paint)
     return redirect('/paints')
 
@@ -34,15 +35,11 @@ def delete_paint(id):
     paint_repository.delete(id)
     return redirect('/paints')
 
-# EDIT
-# GET '/books/<id>/edit'
 @paints_blueprint.route("/paints/<id>/edit", methods=['GET'])
 def edit_paint_page(id):
     paint = paint_repository.select(id)
     return render_template('paints/edit.html', paint=paint, id=id)
 
-# UPDATE
-# PUT '/books/<id>'
 @paints_blueprint.route("/paints/<id>/edit", methods=['POST'])
 def update_paint(id):
     name = request.form['name']
@@ -52,3 +49,32 @@ def update_paint(id):
     paint = Paint(name, description, value, offset_value, id)
     paint_repository.update_existing_paint(paint)
     return redirect('/paints')
+
+@paints_blueprint.route("/paints/<id>/decrement", methods=['POST'])
+def decrement_paint(id):
+    paint_repository.decrement_paint_popularity(id)
+    return redirect('/paints')
+
+@paints_blueprint.route("/paints/<id>/increment", methods=['POST'])
+def increment_paint(id):
+    paint_repository.increment_paint_popularity(id)
+    return redirect('/paints')
+
+# def paint_pop_decrement(id):
+#     paint_repository.decrement_paint_popularity(id)
+#     return redirect('/paints')
+
+# @paints_blueprint.route("/paints/<id>/increment", methods=['POST'])
+# def paint_pop_increment(id):
+#     paint_repository.increment_paint_popularity(id)
+#     return redirect('/paints')
+
+# @paints_blueprint.route("/paints/<id>/decrement", methods=['POST'])
+# def paint_pop_decrement(id):
+#     paint_repository.decrement_paint_popularity(id)
+#     return redirect('/paints')
+
+# @paints_blueprint.route("/paints/<id>/increment", methods=['POST'])
+# def paint_pop_increment(id):
+#     paint_repository.increment_paint_popularity(id)
+#     return redirect('/paints')
