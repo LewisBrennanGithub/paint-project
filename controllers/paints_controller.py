@@ -6,7 +6,7 @@ import repositories.paint_repository as paint_repository
 paints_blueprint = Blueprint("paints", __name__)
 
 @paints_blueprint.route("/paints")
-def users():
+def top_paints():
     paints = paint_repository.list_paints_limited() 
     return render_template("paints/index.html", paints = paints)
 
@@ -40,13 +40,17 @@ def edit_paint_page(id):
     paint = paint_repository.select(id)
     return render_template('paints/edit.html', paint=paint, id=id)
 
-@paints_blueprint.route("/paints/<id>/edit", methods=['POST'])
+@paints_blueprint.route("/paints/<int:id>/edit", methods=['POST'])
 def update_paint(id):
     name = request.form['name']
     description = request.form['description']
-    value = request.form['value']
-    offset_value = request.form['offset_value']
-    paint = Paint(name, description, value, offset_value, id)
+    value = request.form['value-colour-picker']
+    offset_value = request.form['offset-value-colour-picker']
+    paint = paint_repository.select(id)
+    paint.name = name
+    paint.description = description
+    paint.value = value
+    paint.offset_value = offset_value
     paint_repository.update_existing_paint(paint)
     return redirect('/paints')
 
