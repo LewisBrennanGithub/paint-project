@@ -1,7 +1,6 @@
 from db.run_sql import run_sql
 from helpers.invert import *
 from models.paint import Paint
-import pdb
 
 def save(paint):
     sql = "INSERT INTO paint (name, description, value, offset_value, popularity) VALUES (%s, %s, %s, %s, %s) RETURNING *"
@@ -65,7 +64,6 @@ def save_new_paint(paint):
 def update_existing_paint(paint):
     sql = "UPDATE paints SET (name, description, value, offset_value) = (%s, %s, %s, %s) WHERE id = %s"
     values = [paint.name, paint.description, paint.value, paint.offset_value, paint.id]
-    pdb.set_trace()
     run_sql(sql, values)
 
 # def update_existing_paint(paint):

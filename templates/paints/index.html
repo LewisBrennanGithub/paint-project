@@ -1,12 +1,24 @@
-{% extends 'base.html'%}
-
-{% block content %}
-{% for paint in paints %}
-<div>
-  <div>
-    <a href="/paints/{{paint.id}}">{{paint.name}}</a>
+<head>
+  <title>Paints</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Raleway:wght@500&family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+<div class="container">
+  <section class="indexsidebar">
+    <a href="/paints/new">Add New Paint</a>
+    <br>
+    <a href="/paints">View Top Paints</a>
+    <br>
+    <p>hi!</p>
+  </section>
+  <section class="indexmain">
+  {% for paint in paints %}
+  <div class="paintsquare" style="background-color:{{paint.value}}">
+    <a href="/paints/{{paint.id}}" style="color:{{paint.offset_value}}">{{paint.name}}</a>
   </div>
-</div>
 {% endfor %}
-
-{% endblock %}
+  </section>
+</div>
