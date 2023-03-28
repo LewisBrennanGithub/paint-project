@@ -2,22 +2,20 @@
 <html>
 <head>
   <title>Paints</title>
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-  <header>
-    <a href="/paints/new">Add New Paint</a>
-    <a href="/paints">View Top Paints</a>
-  </header>
-<main>
-  <p>base.html content</p>
-  <section>
+  <div class="container">
+    <section class="sidebar">
+      <a href="/paints/new">Add New Paint</a>
+      <br>
+      <a href="/paints">View Top Paints</a>
+    </section>
+    <section class="main">
       {% block content %}
-      body {
-        background-color: {{ paint.value }};
-        color: {{ paint.offset_value }};
-      }
-      {% endblock%}
-  </section>
-  </main>
+      {% endblock %}
+    </section>
+  </div>
 </body>
 </html>
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
