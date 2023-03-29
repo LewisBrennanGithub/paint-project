@@ -1,26 +1,39 @@
 <head>
+  {{ fontawesome_html() }}
   <style>
     body {
-      background-color: {{ paint.value }};
-      color: {{ paint.offset_value }};
+      background-color: {{paint.value}};
+      color: {{paint.offset_value}};
     }
   </style>
 </head>
 <body>
-  
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>{{ paint.name }}</h1>
-  <p>Description: {{ paint.description }}</p>
-  <p>Value: {{ paint.value }}</p>
-  <p>Offset Value: #{{ paint.offset_value }}</p>
-  <a href="/paints/{{paint.id}}/edit">Edit Paint</a>
-  <form action="{{paint.id}}/delete" method="POST">
-  <input type="submit" value="Delete">
+<section class="individual">
+  <h1 class="plaque" style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Name: {{ paint.name }}</h1>
+  <p class="plaque" style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Description: {{ paint.description }}</p>
+  <section class="button-group">
+  <p class="plaque" style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Value: {{ paint.value }} </p>
+  <p class="plaque" style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Offset: {{ paint.offset_value }}</p>
+  </section>
+  <br>
+  <p class="plaque" style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Popularity: {{paint.popularity}}</p>
+  <section class="button-group">
+  <form action="/paints/{{paint.id}}/decrement" method="POST">
+    <input class="button" style="color:{{paint.offset_value}}" type="submit" value="I hate it!" id="decrement" name="decrement">
   </form>
+  <form action="/paints/{{paint.id}}/increment" method="POST">
+    <input class="button" style="color:{{paint.offset_value}}"type="submit" value="I like it!" id="increment" name="increment">
+  </form>
+  <br>
+</section>
+  <a class="button" style="color:{{paint.offset_value}}; margin-bottom:0.5rem" href="/paints/{{paint.id}}/edit">Edit Paint</a>
+  <form action="{{paint.id}}/delete" method="POST">
+  <input class="button" style="color:{{paint.offset_value}}" type="submit" value="Delete">
+  </form>
+</section>
 {% endblock %}
 
-{% block styles %}
-{% endblock %}
 </body>

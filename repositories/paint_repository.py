@@ -1,5 +1,5 @@
 from db.run_sql import run_sql
-
+from helpers.invert import *
 from models.paint import Paint
 
 def save(paint):
@@ -26,12 +26,12 @@ def select(id):
     results = run_sql(sql, values)
     if results:
         result = results[0]
-        paint = Paint(result['name'], result['description'], result['value'], result['popularity'], result['id'])
+        paint = Paint(result['name'], result['description'], result['value'], result['offset_value'], result['popularity'], result['id'])
     return paint
 
 def delete_all():
     sql = "DELETE FROM paints"
-    run_sql
+    run_sql(sql)
 
 def delete(id):
     sql = "DELETE FROM paints WHERE id = %s"
@@ -48,13 +48,27 @@ def list_paints_limited():
     sql = "SELECT * FROM paints ORDER BY popularity DESC LIMIT 9"
     results = run_sql(sql)
     for row in results:
+<<<<<<< HEAD
         paint = Paint(row['name'], row['description'], row['value'], row['offset_value'], row['offset_override'], row['popularity'], row['id'])
+=======
+        paint = Paint(row['name'], row['description'], row['value'], row['offset_value'], row['popularity'], row['id'])
+        paints.append(paint)
+    return paints
+
+def list_all_paints():
+    paints = []
+    sql = "SELECT * FROM paints ORDER BY name ASC"
+    results = run_sql(sql)
+    for row in results:
+        paint = Paint(row['name'], row['description'], row['value'], row['offset_value'], row['popularity'], row['id'])
+>>>>>>> justincase
         paints.append(paint)
     return paints
 
 def save_new_paint(paint):
-    sql = "INSERT INTO paints (name, description, value) VALUES (%s, %s, %s) RETURNING *"
-    values = [paint.name, paint.description, paint.value]
+    offset_value = invert_colour(paint.value)
+    sql = "INSERT INTO paints (name, description, value, offset_value, popularity) VALUES (%s, %s, %s, %s, %s) RETURNING *"
+    values = [paint.name, paint.description, paint.value, offset_value, paint.popularity]
     results = run_sql(sql, values)
     id = results[0]['id']
     paint.id = id
@@ -63,4 +77,18 @@ def save_new_paint(paint):
 def update_existing_paint(paint):
     sql = "UPDATE paints SET (name, description, value, offset_value, offset_override) = (%s, %s, %s, %s, %s) WHERE id = %s"
     values = [paint.name, paint.description, paint.value, paint.offset_value, True, paint.id]
+    run_sql(sql, values)
+
+def decrement_paint_popularity(id):
+    paint = select(id)
+    paint.decrease_popularity()
+    sql = "UPDATE paints SET popularity = %s WHERE id = %s"
+    values = [paint.popularity, paint.id]
+    run_sql(sql, values)
+
+def increment_paint_popularity(id):
+    paint = select(id)
+    paint.increase_popularity()
+    sql = "UPDATE paints SET popularity = %s WHERE id = %s"
+    values = [paint.popularity, paint.id]
     run_sql(sql, values)

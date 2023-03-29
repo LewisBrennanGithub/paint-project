@@ -6,9 +6,22 @@ import repositories.paint_repository as paint_repository
 paints_blueprint = Blueprint("paints", __name__)
 
 @paints_blueprint.route("/paints")
+<<<<<<< HEAD
 def main():
+=======
+def top_paints():
+>>>>>>> justincase
     paints = paint_repository.list_paints_limited() 
     return render_template("paints/index.html", paints = paints)
+
+@paints_blueprint.route("/paints/all")
+def all_paints():
+    paints = paint_repository.list_all_paints() 
+    return render_template("paints/all.html", paints = paints)
+
+@paints_blueprint.route("/paints/about")
+def about():
+    return render_template("paints/about.html")
 
 @paints_blueprint.route("/paints/<id>")
 def show(id):
@@ -24,8 +37,9 @@ def new_paint():
 def create_paint():
     name = request.form['name']
     description = request.form['description']
-    value = request.form['value']
-    new_paint = Paint(name, description, value)
+    value = request.form['colour-picker']
+    popularity = 0
+    new_paint = Paint(name, description, value, popularity)
     paint_repository.save_new_paint(new_paint)
     return redirect('/paints')
 
@@ -34,21 +48,37 @@ def delete_paint(id):
     paint_repository.delete(id)
     return redirect('/paints')
 
-# EDIT
-# GET '/books/<id>/edit'
 @paints_blueprint.route("/paints/<id>/edit", methods=['GET'])
 def edit_paint_page(id):
     paint = paint_repository.select(id)
     return render_template('paints/edit.html', paint=paint, id=id)
 
+<<<<<<< HEAD
 # UPDATE
 # PUT '/books/<id>'
 @paints_blueprint.route("/paints/<id>/edit", methods=['GET', 'POST'])
+=======
+@paints_blueprint.route("/paints/<int:id>/edit", methods=['POST'])
+>>>>>>> justincase
 def update_paint(id):
     name = request.form['name']
     description = request.form['description']
-    value = request.form['value']
-    offset_value = request.form['offset_value']
-    paint = Paint(name, description, value, offset_value, id)
+    value = request.form['value-colour-picker']
+    offset_value = request.form['offset-value-colour-picker']
+    paint = paint_repository.select(id)
+    paint.name = name
+    paint.description = description
+    paint.value = value
+    paint.offset_value = offset_value
     paint_repository.update_existing_paint(paint)
+    return redirect('/paints')
+
+@paints_blueprint.route("/paints/<id>/decrement", methods=['POST'])
+def decrement_paint(id):
+    paint_repository.decrement_paint_popularity(id)
+    return redirect('/paints')
+
+@paints_blueprint.route("/paints/<id>/increment", methods=['POST'])
+def increment_paint(id):
+    paint_repository.increment_paint_popularity(id)
     return redirect('/paints')
