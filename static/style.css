@@ -2,17 +2,6 @@ body {
   margin: 0px;
 }
 
-/* .cont {
-  display: flex;
-  flex-direction: row;
-}
-
-.heads {
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-} */
-
 .container {
   display: flex;
   flex-direction: row;
@@ -86,7 +75,6 @@ body {
 }
 
 .indexsidebarmain {
-  /* width: 20vw; */
   align-items: stretch;
   padding-left: 2rem;
   padding-top: 2rem;
@@ -269,7 +257,6 @@ body {
 .mainpage {
   justify-content: center;
   align-items: center;
-  /* margin-left: 6.8rem; */
   font-size: 4rem;
   margin-top: 1rem;
   color: #B05E00;

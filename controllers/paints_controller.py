@@ -72,22 +72,3 @@ def decrement_paint(id):
 def increment_paint(id):
     paint_repository.increment_paint_popularity(id)
     return redirect('/paints')
-
-# def paint_pop_decrement(id):
-#     paint_repository.decrement_paint_popularity(id)
-#     return redirect('/paints')
-
-# @paints_blueprint.route("/paints/<id>/increment", methods=['POST'])
-# def paint_pop_increment(id):
-#     paint_repository.increment_paint_popularity(id)
-#     return redirect('/paints')
-
-# @paints_blueprint.route("/paints/<id>/decrement", methods=['POST'])
-# def paint_pop_decrement(id):
-#     paint_repository.decrement_paint_popularity(id)
-#     return redirect('/paints')
-
-# @paints_blueprint.route("/paints/<id>/increment", methods=['POST'])
-# def paint_pop_increment(id):
-#     paint_repository.increment_paint_popularity(id)
-#     return redirect('/paints')
