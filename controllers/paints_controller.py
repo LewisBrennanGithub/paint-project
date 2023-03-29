@@ -10,6 +10,11 @@ def top_paints():
     paints = paint_repository.list_paints_limited() 
     return render_template("paints/index.html", paints = paints)
 
+@paints_blueprint.route("/paints")
+def all_paints():
+    paints = paint_repository.list_all_paints() 
+    return render_template("paints/all.html", paints = paints)
+
 @paints_blueprint.route("/paints/<id>")
 def show(id):
     paint = paint_repository.select(id)

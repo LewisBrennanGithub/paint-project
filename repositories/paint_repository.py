@@ -52,6 +52,15 @@ def list_paints_limited():
         paints.append(paint)
     return paints
 
+def list_all_paints():
+    paints = []
+    sql = "SELECT * FROM paints ORDER BY popularity DESC"
+    results = run_sql(sql)
+    for row in results:
+        paint = Paint(row['name'], row['description'], row['value'], row['offset_value'], row['popularity'], row['id'])
+        paints.append(paint)
+    return paints
+
 def save_new_paint(paint):
     offset_value = invert_colour(paint.value)
     sql = "INSERT INTO paints (name, description, value, offset_value, popularity) VALUES (%s, %s, %s, %s, %s) RETURNING *"
