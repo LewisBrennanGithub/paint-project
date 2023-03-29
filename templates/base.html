@@ -9,18 +9,28 @@
   {{ fontawesome_html() }}
 </head>
 <body>
-  <div class="container">
-    <section class="sidebar" style="background-color:{{paint.offset_value}}; color:{{paint.value}};">
-      <a href="/paints/new" style="color:{{paint.value}}">Add New Paint</a>
-      <br>
-      <a href="/paints" style="color:{{paint.value}}">View Top Paints</a>
-      <br>
-      <p>hi!</p>
-    </section>
+  <div class="paintpagecontainer">
+    <section class="indexsidebarmain" style="background-color:{{paint.offset_value}}; color:{{paint.value}};">
+      <ul>
+        <li><a class="interiorlink" href="/" style="color:{{paint.value}}"><i class="fas fa-circle"></i> Home</a></li>
+        <br>
+        <li><a class="interiorlink" href="/paints/new" style="color:{{paint.value}}"><i class="fas fa-circle"></i> Add New Paint</a></li>
+        <br>
+        <li><a class="interiorlink" href="/paints" style="color:{{paint.value}}"><i class="fas fa-circle"></i> View Top Paints</a></li>
+        <br>
+        <li><a class="interiorlink" href="/" style="color:{{paint.value}}"><i class="fas fa-circle"></i> View All Paints</a></li>
+        <br>
+        <li><a class="interiorlink" href="/" style="color:{{paint.value}}"><i class="fas fa-circle"></i> About</a></li>
+        <br>
+      </ul>
+  </section>
     <section class="main">
-      <div class="header">
-        <h1>Paints!</h1>
-      </div>
+        <section class="bigmaintoppaints">
+          <section class="maintitle" style="color:{{paint.offset_value}}">
+          <h1><span class="fas fa-brush"></span> Paint Viewer</h1>
+        </section>
+        </section>
+
       {% block content %}
       {% endblock %}
     </section>
