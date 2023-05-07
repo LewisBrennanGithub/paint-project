@@ -7,21 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Raleway:wght@500&family=Roboto:wght@100&display=swap" rel="stylesheet">
   {{ fontawesome_html() }}
 </head>
-<div class="container">
-    <section class="indexsidebarmain">
-      <ul>
-        <li><a class="link" href="/"><i class="fas fa-circle"></i> Home</a></li>
-        <br>
-        <li><a class="link" href="/paints/new"><i class="fas fa-circle"></i> Add New Paint</a></li>
-        <br>
-        <li><a class="link" href="/paints"><i class="fas fa-circle"></i> View Top Paints</a></li>
-        <br>
-        <li><a class="link" href="/paints/all"><i class="fas fa-circle"></i> View All Paints</a></li>
-        <br>
-        <li><a class="link" href="/paints/about"><i class="fas fa-circle"></i> About</a></li>
-        <br>
-      </ul>
-  </section>
+{% extends "paints/navbar.html" %}
+
+{% block content %}
   <section class="toppaintsmain">
   {% for paint in paints %}
   <div class="paintsquare" style="background-color:{{paint.value}}">
@@ -29,4 +17,4 @@
   </div>
 {% endfor %}
   </section>
-</div>
+  {% endblock %}

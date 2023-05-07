@@ -1,35 +1,12 @@
-<head>
-  <title>Paints</title>
-  <link rel="stylesheet" href="/static/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
-  {{ fontawesome_html() }}
-</head>
-<div class="indexcontainer">
-  <section class="navbar">
-    <ul>
-      <li><a class="link" href="/">Home</a></li>
-      <br>
-      <li><a class="link" href="/paints/new">Add New Paint</a></li>
-      <br>
-      <li><a class="link" href="/paints">View Top Paints</a></li>
-      <br>
-      <li><a class="link" href="/paints/all">View All Paints</a></li>
-      <br>
-      <li><a class="link" href="/paints/about">About</a></li>
-      <br>
-    </ul>
-    </section>
-    <section class="bigmains">
-  <section class="maintitle">
-    <h1><span class="fas fa-brush"></span> Paint Viewer</h1>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Piet_Mondriaan_-_03.jpg?20150102110155" alt="" height="300vh" width="auto">
-  </section>
+{% extends "paints/navbar.html" %}
+
+{% block content %}
+
+<section class="maintitle">
+  <h1><span class="fas fa-brush"></span> Paint Viewer</h1>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Piet_Mondriaan_-_03.jpg?20150102110155" alt="" height="300vh" width="auto">
+</section>
 <div class="indexmaintext">
   <p>Do not use chatGPT for CSS advice. Use inspect.</p>
-  </div>
-</section>
-</div> 
-</section>
-<!-- <div class="cont">
-<div class="heads">Hello!</div>
-</div> -->
+</div>
+{% endblock %}

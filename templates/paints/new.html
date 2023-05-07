@@ -4,25 +4,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
   {{ fontawesome_html() }}
 </head>
-<div class="indexcontainer">
-  <section class="indexsidebarmain">
-    <ul>
-      <li><a class="link" href="/"><i class="fas fa-circle"></i> Home</a></li>
-      <br>
-      <li><a class="link" href="/paints/new"><i class="fas fa-circle"></i> Add New Paint</a></li>
-      <br>
-      <li><a class="link" href="/paints"><i class="fas fa-circle"></i> View Top Paints</a></li>
-      <br>
-      <li><a class="link" href="/"><i class="fas fa-circle"></i> View All Paints</a></li>
-      <br>
-      <li><a class="link" href="/paints/about"><i class="fas fa-circle"></i> About</a></li>
-      <br>
-    </ul>
-    </section>
-    <section class="bigmains">
-  <section class="maintitle">
-    <h1><span class="fas fa-brush"></span> Paint Viewer</h1>
-  </section>
+{% extends "paints/navbar.html" %}
+
+{% block content %}
 <section class="mainpage">
   <form action="/paints/new" method="post">
   <div class="plaque" style="text-align:center; background-color:#B05E00; color:white;">
@@ -40,3 +24,4 @@
 </section>
 </section>
 </div> 
+{% endblock %}

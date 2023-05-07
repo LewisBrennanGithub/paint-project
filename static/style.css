@@ -229,13 +229,13 @@ body {
   font-size: 0.7rem;
 }
 
-.bigmainstoppaints {
+/* .bigmainstoppaints {
   flex-direction: column;
   justify-content: center;
   align-items: start;
   margin: auto;
   margin-top: 0rem;
-}
+} */
 
 .maintitle {
   text-align: center;
