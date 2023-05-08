@@ -10,11 +10,30 @@
 {% extends "paints/navbar.html" %}
 
 {% block content %}
-  <section class="toppaintsmain">
-  {% for paint in paints %}
-  <div class="paintsquare" style="background-color:{{paint.value}}">
-    <a class="button" href="/paints/{{paint.id}}" style="color:{{paint.offset_value}}">{{paint.name}}</a>
-  </div>
-{% endfor %}
+  <section class="paint-grid">
+    <div class="grid-item testwhite1"></div>
+
+    {% for paint in paints %}
+    {% if loop.index == 1 %}
+      <div class="grid-item paint-1" style="background-color:{{ paint.value }}">
+
+      </div>
+
+    {% endif %}
+  {% endfor %}
+
+    <div class="grid-item testblack1"></div>
+
+    {% for paint in paints %}
+    {% if loop.index == 2 %}
+<div class="grid-item paint-2" style="background-color:{{ paint.value }}">
+</div>
+    {% endif %}
+    {% endfor %}
+
+    <div class="grid-item testwhite2"></div>
+  
   </section>
-  {% endblock %}
+{% endblock %}
+<!-- <a class="button" href="/paints/{{ paint.id }}" style="color:{{ paint.offset_value }}">{{ paint.name }}</a>
+<a class="button" href="/paints/{{ paint.id }}" style="color:{{ paint.offset_value }}">{{ paint.name }}</a> -->

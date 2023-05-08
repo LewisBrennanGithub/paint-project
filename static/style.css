@@ -317,3 +317,71 @@ body {
   padding: 0;
   font-size: 1rem;
 }
+
+.paint-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-areas:
+    'w1 p1 p1'
+    'w1 p1 p1'
+    'b1 p2 w2';
+
+  grid-template-rows: repeat(3, 50px);
+  gap: 1rem;
+  background: #2b2b2b;
+  padding-block: 1rem;
+}
+
+.paint-1 {
+  grid-area: p1;
+}
+
+.paint-2 {
+  grid-area: p2;
+}
+
+.paint-3 {
+  grid-area: p3;
+}
+
+.paint-4 {
+  grid-area: p4;
+}
+
+.testwhite1 {
+  grid-area: w1;
+  background: white;
+}
+
+.testwhite2 {
+  grid-area: w2;
+  background: white;
+}
+
+.testwhite3 {
+  grid-area: w3;
+  background: white;
+}
+
+.testwhite4 {
+  grid-area: w4;
+  background: white;
+}
+
+.testblack1 {
+  grid-area: b1;
+  background: black;
+  color: white;
+}
+
+.testblack2 {
+  grid-area: b2;
+  background: black;
+  color: white;
+}
+
+.testblack3 {
+  grid-area: b3;
+  background: black;
+  color: white;
+}
