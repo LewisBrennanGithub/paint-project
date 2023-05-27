@@ -167,6 +167,7 @@ body {
 }
 
 .button:hover {
+  display: flex;
   background: white;
 }
 
@@ -320,32 +321,70 @@ body {
 
 .paint-grid {
   margin-top: 50px;
+  margin-inline: 50px;
   display: grid;
   grid-template-areas:
-    'w1 p1 p1'
-    'w1 p1 p1'
-    'b1 p2 w2';
+  'w1 w1 w2 w2 w2 w2 w2 p3 p3 p3 p3'
+  'w3 p1 p1 p1 p1 p1 p1 p2 p2 p2 p2'
+  'w3 p1 p1 p1 p1 p1 p1 p2 p2 p2 p2'
+  'w4 p1 p1 p1 p1 p1 p1 w5 w5 w6 w6'
+  'w4 p1 p1 p1 p1 p1 p1 w5 w5 w6 w6';
 
-  grid-template-rows: repeat(3, 50px);
+  grid-template-rows: repeat(5, 5rem);
+  /* grid-template-columns: repeat(10, 5rem); */
   gap: 1rem;
   background: #2b2b2b;
-  padding-block: 1rem;
+  /* padding-block: 1rem; */
+  padding: 1rem;
 }
 
 .paint-1 {
   grid-area: p1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.paint-1 .button {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.paint-1:hover .button {
+  opacity: 1;
+}
+
 
 .paint-2 {
   grid-area: p2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paint-2 .button {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.paint-2:hover .button {
+  opacity: 1;
 }
 
 .paint-3 {
   grid-area: p3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.paint-4 {
-  grid-area: p4;
+.paint-3 .button {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.paint-3:hover .button {
+  opacity: 1;
 }
 
 .testwhite1 {
@@ -368,20 +407,12 @@ body {
   background: white;
 }
 
-.testblack1 {
-  grid-area: b1;
-  background: black;
-  color: white;
+.testwhite5 {
+  grid-area: w5;
+  background: white;
 }
 
-.testblack2 {
-  grid-area: b2;
-  background: black;
-  color: white;
-}
-
-.testblack3 {
-  grid-area: b3;
-  background: black;
-  color: white;
+.testwhite6 {
+  grid-area: w6;
+  background: white;
 }

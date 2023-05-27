@@ -11,29 +11,37 @@
 
 {% block content %}
   <section class="paint-grid">
-    <div class="grid-item testwhite1"></div>
+    <div class="testwhite1"></div>
+    <div class="testwhite2"></div>
 
     {% for paint in paints %}
-    {% if loop.index == 1 %}
-      <div class="grid-item paint-1" style="background-color:{{ paint.value }}">
-
+    {% if loop.index == 3 %}
+      <div class="paint-3" style="background-color:{{ paint.value }}">
+        <a class="button" href="/paints/{{paint.id}}" style="color:{{paint.offset_value}}">{{paint.name}}</a>
       </div>
-
-    {% endif %}
-  {% endfor %}
-
-    <div class="grid-item testblack1"></div>
-
-    {% for paint in paints %}
-    {% if loop.index == 2 %}
-<div class="grid-item paint-2" style="background-color:{{ paint.value }}">
-</div>
     {% endif %}
     {% endfor %}
 
-    <div class="grid-item testwhite2"></div>
-  
+    <div class="testwhite3"></div>
+
+    {% for paint in paints %}
+    {% if loop.index == 1 %}
+      <div class="paint-1" style="background-color:{{ paint.value }}">
+        <a class="button" href="/paints/{{paint.id}}" style="color:{{paint.offset_value}}">{{paint.name}}</a>
+      </div> 
+    {% endif %}
+    {% endfor %}
+
+    {% for paint in paints %}
+    {% if loop.index == 2 %}
+      <div class="paint-2" style="background-color:{{ paint.value }}"><a class="button" href="/paints/{{paint.id}}" style="color:{{paint.offset_value}}">{{paint.name}}</a></div>
+    {% endif %}
+    {% endfor %}
+
+    <div class="testwhite4"></div>
+    <div class="testwhite5"></div>
+    <div class="testwhite6"></div>
+    
   </section>
 {% endblock %}
-<!-- <a class="button" href="/paints/{{ paint.id }}" style="color:{{ paint.offset_value }}">{{ paint.name }}</a>
-<a class="button" href="/paints/{{ paint.id }}" style="color:{{ paint.offset_value }}">{{ paint.name }}</a> -->
+
