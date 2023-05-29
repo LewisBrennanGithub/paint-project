@@ -1,18 +1,17 @@
 {% extends "base.html" %}
 
 {% block navbar %}
+
 <section class="navbar">
-  <ul>
-    <li><a class="link" href="/">Home</a></li>
-    <br>
-    <li><a class="link" href="/paints/new"> Add New Paint</a></li>
-    <br>
-    <li><a class="link" href="/paints">View Top Paints</a></li>
-    <br>
-    <li><a class="link" href="/paints/all">View All Paints</a></li>
-    <br>
-    <li><a class="link" href="/paints/about">About</a></li>
-    <br>
-  </ul>
+  <div>
+  <h1>Paint Viewer</h1>
+</div>
+<div class="navbar-seperator">
+<a class="link" href="/">Home</a>
+<a class="link" href="/paints/new"> Add New Paint</a>
+<a class="link" href="/paints">View Top Paints</a>
+<a class="link" href="/paints/all">View All Paints</a>
+<a class="link" href="/paints/about">About</a>
+</div>
 </section>
 {% endblock %}

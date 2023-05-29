@@ -8,7 +8,7 @@
   </style>
 </head>
 <body>
-{% extends 'base.html' %}
+  {% extends "paints/navbar.html" %}
 
 {% block content %}
 <section class="individual">
@@ -22,16 +22,16 @@
   <p class="plaque" style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Popularity: {{paint.popularity}}</p>
   <section class="button-group">
   <form action="/paints/{{paint.id}}/decrement" method="POST">
-    <input class="button" style="color:{{paint.offset_value}}" type="submit" value="I hate it!" id="decrement" name="decrement">
+    <input class="button-paint-page" style="color:{{paint.offset_value}}" type="submit" value="I hate it!" id="decrement" name="decrement">
   </form>
   <form action="/paints/{{paint.id}}/increment" method="POST">
-    <input class="button" style="color:{{paint.offset_value}}"type="submit" value="I like it!" id="increment" name="increment">
+    <input class="button-paint-page" style="color:{{paint.offset_value}}"type="submit" value="I like it!" id="increment" name="increment">
   </form>
   <br>
 </section>
-  <a class="button" style="color:{{paint.offset_value}}; margin-bottom:0.5rem" href="/paints/{{paint.id}}/edit">Edit Paint</a>
+  <a class="button-paint-page" style="color:{{paint.offset_value}}; margin-bottom:0.5rem" href="/paints/{{paint.id}}/edit">Edit Paint</a>
   <form action="{{paint.id}}/delete" method="POST">
-  <input class="button" style="color:{{paint.offset_value}}" type="submit" value="Delete">
+  <input class="button-paint-page" style="color:{{paint.offset_value}}" type="submit" value="Delete">
   </form>
 </section>
 {% endblock %}

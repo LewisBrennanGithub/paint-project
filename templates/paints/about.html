@@ -5,21 +5,9 @@
   {{ fontawesome_html() }}
 </head>
 <div class="aboutcontainer">
-  <section class="aboutsidebar">
-    <ul>
-      <li><a class="link" href="/"><i class="fas fa-circle"></i> Home</a></li>
-      <br>
-      <li><a class="link" href="/paints/new"><i class="fas fa-circle"></i> Add New Paint</a></li>
-      <br>
-      <li><a class="link" href="/paints"><i class="fas fa-circle"></i> View Top Paints</a></li>
-      <br>
-      <li><a class="link" href="/paints/all"><i class="fas fa-circle"></i> View All Paints</a></li>
-      <br>
-      <li><a class="link" href="/paints/about"><i class="fas fa-circle"></i> About</a></li>
-      <br>
-    </ul>
-    </section>
     <section class="bigmains">
+      {% extends "paints/navbar.html" %}
+      {% block content %}
   <section class="maintitle">
     <h1><span class="fas fa-brush"></span> Paint Viewer</h1>
   </section>
@@ -43,6 +31,7 @@
     <p>One area in which I consider my project to have largely failed is in regards to accessibility. The HTML isn't the neatest across the board and could certainly have done with more labelling. On the plus side there are descriptions of all the class attributes and a reasonable naming convention as regards classes, but this certainly could have been improved upon.</p>
     <p>Whilst I'm proud of the finished product the CSS file has 323 lines of code, and as such isn't very DRY-complicit. This is largely down to my problems in the beginning and lacking confidence of my structure - for reference, 2 rows, a column based structure in the second row - but in fairness each of my pages does things slightly differently and in the interests of muddling through I've given a reasonably clearish naming convention to my classes. Much to improve upon and refactor, but job done for now.</p>
   </div>
+  {% endblock %}
 </section>
 </div> 
 </section>

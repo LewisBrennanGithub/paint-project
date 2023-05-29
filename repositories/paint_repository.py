@@ -45,7 +45,7 @@ def update(paint):
 
 def list_paints_limited():
     paints = []
-    sql = "SELECT * FROM paints ORDER BY popularity DESC LIMIT 3"
+    sql = "SELECT * FROM paints ORDER BY popularity DESC LIMIT 9"
     results = run_sql(sql)
     for row in results:
         paint = Paint(row['name'], row['description'], row['value'], row['offset_value'], row['popularity'], row['id'])

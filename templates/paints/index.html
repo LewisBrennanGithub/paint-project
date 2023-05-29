@@ -10,6 +10,7 @@
 {% extends "paints/navbar.html" %}
 
 {% block content %}
+<section class="testback">
   <section class="paint-grid">
     <div class="testwhite1"></div>
     <div class="testwhite2"></div>
@@ -41,7 +42,55 @@
     <div class="testwhite4"></div>
     <div class="testwhite5"></div>
     <div class="testwhite6"></div>
+
+    {% for paint in paints %}
+    {% if loop.index == 4 %}
+      <div class="paint-4" style="background-color:{{ paint.value }}"><a class="button" href="/paints/{{paint.id}}" style="color:{{paint.offset_value}}">{{paint.name}}</a></div>
+    {% endif %}
+    {% endfor %}
+
+    <div class="testwhite7"></div>
+    <div class="testwhite8"></div>
+
+    {% for paint in paints %}
+    {% if loop.index == 5 %}
+      <div class="paint-5" style="background-color:{{ paint.value }}"><a class="button" href="/paints/{{paint.id}}" style="color:{{paint.offset_value}}">{{paint.name}}</a></div>
+    {% endif %}
+    {% endfor %}
+
+    <div class="testwhite9"></div>
+
+    {% for paint in paints %}
+    {% if loop.index == 6 %}
+      <div class="paint-6" style="background-color:{{ paint.value }}"><a class="button" href="/paints/{{paint.id}}" style="color:{{paint.offset_value}}">{{paint.name}}</a></div>
+    {% endif %}
+    {% endfor %}
+
+    <div class="testwhitea"></div>
+
+    {% for paint in paints %}
+    {% if loop.index == 7 %}
+      <div class="paint-7" style="background-color:{{ paint.value }}"><a class="button" href="/paints/{{paint.id}}" style="color:{{paint.offset_value}}">{{paint.name}}</a></div>
+    {% endif %}
+    {% endfor %}
+
+    {% for paint in paints %}
+    {% if loop.index == 8 %}
+      <div class="paint-8" style="background-color:{{ paint.value }}"><a class="button" href="/paints/{{paint.id}}" style="color:{{paint.offset_value}}">{{paint.name}}</a></div>
+    {% endif %}
+    {% endfor %}
+
+    <div class="testwhiteb"></div>
+
+    {% for paint in paints %}
+    {% if loop.index == 9 %}
+      <div class="paint-9" style="background-color:{{ paint.value }}"><a class="button" href="/paints/{{paint.id}}" style="color:{{paint.offset_value}}">{{paint.name}}</a></div>
+    {% endif %}
+    {% endfor %}
+
+    <div class="testwhitec"></div>
     
   </section>
+</section>
 {% endblock %}
 
