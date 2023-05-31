@@ -1,24 +1,69 @@
 body {
   margin: 0px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .container {
-  font-family: 'Raleway', sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
 }
 
-.indexcontainer {
+.container-all-paints {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* .paintsquarebackgroundenabler {
+  background: #2b2b2b;
+  flex: 0 0 calc(25%); 
+} */
+
+.paintsquareouter {
+  flex: 0 0 calc(25%); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 5px solid black;
+}
+
+.paintsquare {
+  position: relative;
+  margin: 0;
+  text-align: center;
+  width: 75%;
+  height: 75%;
+}
+
+.paintsquare a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.navbar {
+  background: black;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.7rem;
+  justify-content: space-evenly;
+  padding-bottom: 0.5rem;
+  text-decoration: none;
+  font-size: 1.5rem;
 }
 
-.paintpagecontainer{
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  font-family: 'Raleway', sans-serif;
+.navbar a {
+  text-decoration: none;
+  list-style-type: none;
+  color:white;
+  font-size: 1rem;
+}
+
+.navbar h1 {
+  color: white;
+  text-align: center;
 }
 
 .navbar-seperator {
@@ -27,91 +72,21 @@ body {
   justify-content: space-evenly;
 }
 
-.navbar {
-  background: black;
-  font-family: 'Raleway', sans-serif;
+.plaque {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  padding-bottom: 0.5rem;
-  
+  align-items: center;
 }
 
-.navbar a {
-  text-decoration: none;
-  list-style-type: none;
-  color:white;
+.plaque div {
+  display: flex;
+  flex-direction: column;
+  margin-block: 0.5rem;
 }
 
-.navbar li {
-  text-decoration: none;
-}
-
-.navbar ul {
-  list-style-type: none;
-}
-
-.navbar h1 {
-  color: white;
-  text-align: center;
-}
-
-.main {
-  flex: 1;
-}
-
-.main a {
-  text-decoration: none;
-}
-
-.main h1 {
-  margin: 1rem;
-}
-
-.indexsidebar {
-  width: 15vw;
-  height: 100%;
-  padding: 2rem;
-  background-color: #B05E00;
-  color: white;
-  font-family: 'Raleway', sans-serif;
-  box-shadow: inset 0 0 0 0px black;
-}
-
-.indexsidebar a {
-  color: white;
-  text-decoration: none;
-}
-
-.indexsidebar ul {
-  margin-top: 1rem;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.indexsidebarmain {
-  align-items: stretch;
-  padding-left: 2rem;
-  padding-top: 2rem;
-  padding-right: 2rem;
-  background-color: #B05E00;
-  color: white;
-  font-family: 'Raleway', sans-serif;
-  box-shadow: 0 0 1px 1px black;
-}
-
-.indexsidebarmain a {
-  color: white;
-  text-decoration: none;
-}
-
-.indexsidebarmain ul {
-  margin-top: 1rem;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  font-size: 1rem;
+.plaque label {
+  margin-bottom: 0.25rem;
 }
 
 .indexmain {
@@ -128,81 +103,76 @@ body {
   text-decoration: none;
 }
 
-.toppaintsmain {
-  flex: 3;
-  background: white;
+
+.button-group {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  grid-template-areas:
+  'b1 b2'
+  'b3 b4';
+}
+
+.button-group-flex {
   display: flex;
-  flex-wrap: wrap;
-  height: 100%;
-  min-height: 100%;
-  justify-content: space-between;
-  font-family: 'Raleway', sans-serif;
+  flex-direction: column;
+  align-items: center;
 }
 
-.toppaintsmain a {
-  color: darkgoldenrod;
-  text-decoration: none;
+.button-group-top {
+  display: flex;
+  flex-direction: row;
 }
 
-.paintsquare {
-  flex-basis: calc(33.33%);
-  background-color: darkgoldenrod;
-  position: relative;
-  margin: 0;
-  box-shadow: 0 0 0 4px #2b2b2b;
+.button1 {
+  grid-area: b1;
 }
 
-.paintsquare a {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
+.button2 {
+  grid-area: b2;
+}
+
+.button-group-bottom {
+  display: flex;
+  flex-direction: row;
+}
+
+.button3 {
+  grid-area: b3;
+}
+
+.button4 {
+  grid-area: b4;
 }
 
 .button {
-  border: 4px;
-  border-style: solid;
-  box-shadow: 1px 1px black;
-  background: none;
-  padding: 2.5px;
-  margin: 2.5px;
   font-family: 'Raleway', sans-serif;
   font-size: 1rem;
-  text-shadow: 1px 1px 1px black;
+  text-decoration: none;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  display: inline-block; /* or block */
+  background: none;
+  border: none;
 }
+
+/* .button a {
+  display: none; /* or block */
 
 .button:hover {
 }
 
-.button-paint-page {
-  border: 4px;
-  border-radius: 4px;
-  border-style: solid;
-  box-shadow: 1px 1px black;
+.button-paint {
   background: none;
-  padding: 4px;
-  margin: 4px;
   font-family: 'Raleway', sans-serif;
   font-size: 1rem;
-  text-shadow: 1px 1px 1px black;
+  text-decoration: none;
+  text-align: center;
 }
 
-.button-paint-page:hover {
-}
-
-.plaque {
-  border-radius: 5px;
-  box-shadow: 1px 1px black;
-  background: none;
-  padding: 0.8rem;
-  margin: 0.8rem;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.5rem;
-  text-shadow: 1px 1px 1px black;
+.button-paint:hover {
 }
 
 .editplaque {
@@ -217,24 +187,29 @@ body {
 }
 
 .inputstyler {
-  border-radius: 5px;
   font-family: 'Raleway', sans-serif;
   font-size: 1rem;
   background-color: white;
+  border: none;
 }
 
 .individual {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin-top: 0px;
+  align-items: stretch;
+  width: 40%;
+  margin-inline: auto;
+  margin-top: 1rem;
 }
 
-.button-group {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: -0.8rem;
+.individualtext {
+  text-align: center;
+}
+
+.individualtext h1,
+.individualtext p {
+  margin-block: 0.5rem; 
 }
 
 .link:hover {
@@ -251,29 +226,6 @@ body {
 
 .fas.fa-circle {
   font-size: 0.7rem;
-}
-
-/* .bigmainstoppaints {
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  margin: auto;
-  margin-top: 0rem;
-} */
-
-.maintitle {
-  text-align: center;
-  font-size: 3rem;
-  color: #B05E00;
-
-}
-
-.maintitle fas {
-  font-size: 4rem;
-}
-
-.maintitle:hover {
-  color: #F44336;
 }
 
 .bigmains {
@@ -358,9 +310,8 @@ body {
   'p5 wa p7 p7 p6 p6 p6'
   'p5 wa p8 wb p9 p9 p9'
   'wc wc p8 wb p9 p9 p9';
-
-  grid-template-rows: repeat(9, 7.5vh);
-  grid-template-columns: repeat(7, 5vw);
+  grid-template-rows: repeat(9, 8.5vh);
+  grid-template-columns: repeat(7, 5.75vw);
   gap: 0.35rem;
   background: #2b2b2b;
   padding: 0.7rem;
@@ -375,12 +326,12 @@ body {
   align-items: center;
 }
 
-.paint-1 .button {
+.paint-1 .button-paint {
   opacity: 0;
   transition: opacity 0.3s;
 }
 
-.paint-1:hover .button {
+.paint-1:hover .button-paint {
   opacity: 1;
 }
 
@@ -392,12 +343,12 @@ body {
   align-items: center;
 }
 
-.paint-2 .button {
+.paint-2 .button-paint {
   opacity: 0;
   transition: opacity 0.3s;
 }
 
-.paint-2:hover .button {
+.paint-2:hover .button-paint {
   opacity: 1;
 }
 
@@ -408,12 +359,12 @@ body {
   align-items: center;
 }
 
-.paint-3 .button {
+.paint-3 .button-paint {
   opacity: 0;
   transition: opacity 0.3s;
 }
 
-.paint-3:hover .button {
+.paint-3:hover .button-paint {
   opacity: 1;
 }
 
@@ -424,13 +375,13 @@ body {
   align-items: center;
 }
 
-.paint-4 .button {
+.paint-4 .button-paint {
   opacity: 0;
   transition: opacity 0.3s;
   transform: rotate(90deg);
 }
 
-.paint-4:hover .button {
+.paint-4:hover .button-paint {
   opacity: 1;
 }
 
@@ -441,13 +392,13 @@ body {
   align-items: center;
 }
 
-.paint-5 .button {
+.paint-5 .button-paint {
   opacity: 0;
   transition: opacity 0.3s;
   transform: rotate(90deg);
 }
 
-.paint-5:hover .button {
+.paint-5:hover .button-paint {
   opacity: 1;
 }
 
@@ -458,12 +409,12 @@ body {
   align-items: center;
 }
 
-.paint-6 .button {
+.paint-6 .button-paint {
   opacity: 0;
   transition: opacity 0.3s;
 }
 
-.paint-6:hover .button {
+.paint-6:hover .button-paint {
   opacity: 1;
 }
 
@@ -474,12 +425,12 @@ body {
   align-items: center;
 }
 
-.paint-7 .button {
+.paint-7 .button-paint {
   opacity: 0;
   transition: opacity 0.3s;
 }
 
-.paint-7:hover .button {
+.paint-7:hover .button-paint {
   opacity: 1;
 }
 
@@ -490,13 +441,13 @@ body {
   align-items: center;
 }
 
-.paint-8 .button {
+.paint-8 .button-paint {
   opacity: 0;
   transition: opacity 0.3s;
   transform: rotate(90deg);
 }
 
-.paint-8:hover .button {
+.paint-8:hover .button-paint {
   opacity: 1;
 }
 
@@ -507,13 +458,13 @@ body {
   align-items: center;
 }
 
-.paint-9 .button {
+.paint-9 .button-paint {
   opacity: 0;
   transition: opacity 0.3s;
 
 }
 
-.paint-9:hover .button {
+.paint-9:hover .button-paint {
   opacity: 1;
 }
 

@@ -7,18 +7,24 @@
 {% extends "paints/navbar.html" %}
 
 {% block content %}
-<section class="mainpage">
+<section class="container">
   <form action="/paints/new" method="post">
   <div class="plaque" style="text-align:center; background-color:#B05E00; color:white;">
-    <label for="name">Name:</label>
-    <input class="inputstyler" type="text" id="name" name="name" required><br><br>
-    <label for="description">Description:</label>
-    <input class="inputstyler" type="text" id="description" name="description"><br><br>
+    <div>
+    <label for="name">Name</label>
+    <input class="inputstyler" type="text" id="name" name="name" required>
+  </div>
+  <div>
+    <label for="description">Description</label>
+    <input class="inputstyler" type="text" id="description" name="description">
+  </div>
+  <div>
     <label for="value">Value</label>
     <input class="inputstyler" type="color" id="colour-picker" name="colour-picker">
-    <br>
-    <br>
+  </div>
+  <div>
     <input class="button" style type="submit" value="Submit">
+  </div>
   </div>
   </form>
 </section>
