@@ -1,0 +1,26 @@
+<head>
+  <title>Paints</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Raleway:wght@500&family=Roboto:wght@100&display=swap" rel="stylesheet">
+  {{ fontawesome_html() }}
+</head>
+{% extends "base.html" %}
+
+{% block navbar %}
+
+<section class="navbar">
+  <div>
+  <h1>Paint Viewer</h1>
+</div>
+<div class="navbar-seperator">
+<a class="link" href="/">Home</a>
+<a class="link" href="/paints/new"> Add New Paint</a>
+<a class="link" href="/paints">View Top Paints</a>
+<a class="link" href="/paints/all">View All Paints</a>
+<a class="link" href="/paints/about">About</a>
+</div>
+</section>
+{% endblock %}

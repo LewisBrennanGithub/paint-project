@@ -1,23 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Paints</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+  {{ fontawesome_html() }}
 </head>
 <body>
-  <header>
-    <a href="/paints/new">Add New Paint</a>
-    <a href="/paints">View Top Paints</a>
-  </header>
-<main>
-  <p>base.html content</p>
-  <section>
-      {% block content %}
-      body {
-        background-color: {{ paint.value }};
-        color: {{ paint.offset_value }};
-      }
-      {% endblock%}
-  </section>
-  </main>
+    <section class="navbar">
+      {% block navbar %}{% endblock %}
+    </section>
+    {% block content %}{% endblock %}
 </body>
 </html>

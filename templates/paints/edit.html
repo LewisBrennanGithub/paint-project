@@ -7,28 +7,41 @@
   </style>
 </head>
 <body>
-  
-{% extends 'base.html' %}
+  {% extends "paints/navbar.html" %}
 
 {% block content %}
-  <h1>{{ paint.name }}</h1>
-  <p>Description: {{ paint.description }}</p>
-  <p>Value: {{ paint.value }}</p>
-  <p>Offset Value: #{{ paint.offset_value }}</p>
+<section class="container">
+<div class="editplaque" style="text-align:center; background-color:{{paint.offset_value}}; color:{{paint.value}};">
+  <div>
   <form action="/paints/{{ paint.id }}/edit" method="post">
     <label for="name">Name</label>
-    <input type="text" id="name" name="name" value="{{ paint.name }}" required><br><br>
+  </br>
+    <input class="inputstyler" type="text" id="name" name="name" value="{{ paint.name }}" required>
+  </div>
+  <div>
     <label for="description">Description</label>
-    <input type="text" id="description" name="description" value="{{ paint.description }}"><br><br>
-    <label for="value">Value</label>
-    <input type="text" id="value" name="value" placeholder="#000000" pattern="#[a-zA-Z0-9]{6}" value="{{ paint.value }}" required><br><br>
-    <label for="offset_value">Offset Value</label>
-    <input type="text" id="offset_value" name="offset_value" placeholder="#FFFFFF" pattern="#[a-zA-Z0-9]{6}" value="{{ paint.offset_value }}" required><br><br>
-    <input type="submit" value="Submit">
-  </form>
-  <form action="{{paint.id}}/delete" method="POST">
-  <input type="submit" value="Delete">
-  </form>
+  </br>
+    <input class="inputstyler" type="text" id="description" name="description" value="{{ paint.description }}">
+  </div>
+    <div class="button-group" style="margin-top: 1.5rem;">
+      <div class="button1">
+        <input style="background-color:{{paint.offset_value}}; color:{{paint.value}};" type="color" id="value-colour-picker" name="value" value="{{paint.value}}" required>
+      </div>
+      <div class="button2">
+        <input style="background-color:{{paint.offset_value}}; color:{{paint.value}};" type="color" id="offset-value-colour-picker" name="offset_value" value="{{paint.offset_value}}" required>
+      </div>
+      <div class="button3">
+        <input class="button" style="background-color:{{paint.offset_value}}; color:{{paint.value}};" type="submit" value="Submit">
+      </div>
+    </form>
+    <div class="button4">
+      <form action="{{paint.id}}/delete" method="POST">
+        <input class="button" style="background-color:{{paint.offset_value}}; color:{{paint.value}};" type="submit" value="Delete">
+      </form>
+    </div>
+  </div>
+</div>
+</section>
 {% endblock %}
 {% block styles %}
 {% endblock %}

@@ -1,6 +1,15 @@
-{% extends 'base.html'%}
+{% extends "paints/navbar.html" %}
 
 {% block content %}
-<p>Index html content</p>
 
+<section class="home-page">
+  <h1>Version 2.0</h1>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Piet_Mondriaan_-_03.jpg?20150102110155" alt="" height="300vh" width="auto">
+  <h2>Welcome to Paint Viewer!</h2>
+  <h4>Manual</h4>
+  <p>Why not start by adding a new paint? This is the second button from the left in the navbar.</p>
+  <p>Once you've filled out the form you will be directed to View Top Paints, the middle item in the navbar. Depending on the state of the Database, your paint may not be here at this stage, but fret not! Navigate to View All Paints and you will find it in the flag. Hover over your paint and the button will present itself.</p>
+  <p>You can now vote on the popularity of the paint. Each click will navigate you back to View Top Paints so you can see whether or not your paint has made it.</p>
+  <p>You will also be presented with an option to edit your paint in this page. You can alter the name, the description and the primary/offset colours.</p>
+</section>
 {% endblock %}
