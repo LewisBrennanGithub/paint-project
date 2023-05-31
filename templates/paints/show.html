@@ -11,7 +11,7 @@
   {% extends "paints/navbar.html" %}
 
 {% block content %}
-<section class="individual">
+<section class="individual-paint-page">
   <div class="individualtext" style="background-color:{{paint.offset_value}}; color:{{paint.value}}">
   <h1 style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Name: {{ paint.name }}</h1>
   <span>
@@ -21,8 +21,6 @@
   <p style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Description: {{ paint.description }}</p>
   <p style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Popularity: {{paint.popularity}}</p>
   <div class="button-group">
-    <!-- <div class="button-group-flex">
-    <div class="button-group-top"> -->
     <div class="button1">
     <form action="/paints/{{paint.id}}/increment" method="POST">
       <input class="button" style="color:{{paint.value}}"type="submit" value="I like it!" id="increment" name="increment">
@@ -33,22 +31,16 @@
     <input class="button" style="color:{{paint.value}}" type="submit" value="I hate it!" id="decrement" name="decrement">
   </form>
 </div>
-<!-- </div> -->
-<!-- <div class="button-group-bottom"> -->
   <div class="button3">
-  <!-- <form> -->
   <a class="button" style="color:{{paint.value}};" href="/paints/{{paint.id}}/edit">Edit</a>
-<!-- </form> -->
 </div>
 <div class="button4">
   <form action="{{paint.id}}/delete" method="POST">
   <input class="button" style="color:{{paint.value}}" type="submit" value="Delete">
   </form>
-<!-- </div> -->
 </div>
 </div>
 </div>
 </section>
 {% endblock %}
-
 </body>

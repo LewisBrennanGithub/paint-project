@@ -3,6 +3,42 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+.link:hover {
+  color: #F44336;
+}
+
+/* HEADER CLASSES */
+
+.navbar {
+  background: #ebac00;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-bottom: 0.5rem;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  list-style-type: none;
+  color:white;
+  font-size: 1rem;
+}
+
+.navbar h1 {
+  color: white;
+  text-align: center;
+}
+
+.navbar-seperator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/* MAIN BODY CLASSES */
+
 .container {
   display: flex;
   justify-content: center;
@@ -35,72 +71,31 @@ body {
   text-align: left;
 }
 
-.paintsquare {
-  position: relative;
-  margin: 0;
-  text-align: center;
-  width: 70%;
-}
-
-.button-paint-all {
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.button-paint-all:hover {
-  opacity: 1;
-}
-
-.paintsquare a {
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.navbar {
-  background: #ebac00;
+.individual-paint-page {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  padding-bottom: 0.5rem;
-  text-decoration: none;
-  font-size: 1.5rem;
+  justify-content: center;
+  align-items: stretch;
+  width: 40%;
+  margin-inline: auto;
+  margin-top: 1rem;
 }
 
-.navbar a {
-  text-decoration: none;
-  list-style-type: none;
-  color:white;
-  font-size: 1rem;
-}
-
-.navbar h1 {
-  color: white;
+.individualtext {
   text-align: center;
 }
 
-.navbar-seperator {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+.individualtext h1,
+.individualtext p {
+  margin-block: 0.5rem; 
 }
 
-.plaque {
-  padding: 1rem;
+.top-paints-main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 
-.plaque div {
-  display: flex;
-  flex-direction: column;
-  margin-block: 0.5rem;
-}
-
-.plaque label {
-  margin-bottom: 0.25rem;
-}
+/* BUTTONS */
 
 .button-group {
   display: grid;
@@ -161,8 +156,6 @@ body {
 .button input {
   border: none;
 }
-.button:hover {
-}
 
 .button-paint {
   background: none;
@@ -170,9 +163,31 @@ body {
   font-size: 1rem;
   text-decoration: none;
   text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .button-paint:hover {
+  opacity: 1;
+}
+
+/* BODY SPECIFICS */
+
+.plaque {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plaque div {
+  display: flex;
+  flex-direction: column;
+  margin-block: 0.5rem;
+}
+
+.plaque label {
+  margin-bottom: 0.25rem;
 }
 
 .editplaque {
@@ -180,6 +195,19 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.paintsquare {
+  position: relative;
+  margin: 0;
+  text-align: center;
+  width: 70%;
+}
+
+.paintsquare a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .inputstyler {
@@ -190,109 +218,8 @@ body {
   margin-top: 0.5rem;
 }
 
-.individual {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  width: 40%;
-  margin-inline: auto;
-  margin-top: 1rem;
-}
 
-.individualtext {
-  text-align: center;
-}
-
-.individualtext h1,
-.individualtext p {
-  margin-block: 0.5rem; 
-}
-
-.link:hover {
-  color: #F44336;
-}
-
-.interiorlink:hover {
-  color: white !important;
-}
-
-.fas.fa-brush {
-  font-size: 2.9rem;
-}
-
-.fas.fa-circle {
-  font-size: 0.7rem;
-}
-
-.bigmains {
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  margin: auto;
-  margin-top: 0rem;
-}
-
-.mainpage {
-  justify-content: center;
-  align-items: center;
-  font-size: 4rem;
-  margin-top: 1rem;
-  color: #B05E00;
-}
-
-.indexmaintext {
-  font-size: 1.5rem;
-  text-align: center;
-  margin: auto;
-  color: #B05E00;
-}
-
-.aboutmaintext {
-  font-size: 1.5rem;
-  text-align: center;
-  margin: auto;
-  padding-inline: 6rem;
-  color: black;
-  text-shadow: none;
-}
-
-.aboutcontainer {
-  display: flex;
-  flex-direction: row;
-  font-family: 'Raleway', sans-serif;
-  text-shadow: 1px 1px 1px black;
-}
-
-.aboutsidebar {
-  align-items: stretch;
-  padding-left: 2rem;
-  padding-top: 2rem;
-  padding-right: 2rem;
-  width: 35vw;
-  background-color: #B05E00;
-  color: white;
-  font-family: 'Raleway', sans-serif;
-  box-shadow: 0 0 1px 1px black;
-}
-
-.aboutsidebar a {
-  color: white;
-  text-decoration: none;
-}
-
-.aboutsidebar ul {
-  margin-top: 1rem;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  font-size: 1rem;
-}
-
-.testback {
-  display: flex;
-  justify-content: center;
-}
+/* THE GRID */
 
 .paint-grid {
   display: grid;
@@ -322,16 +249,6 @@ body {
   align-items: center;
 }
 
-.paint-1 .button-paint {
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.paint-1:hover .button-paint {
-  opacity: 1;
-}
-
-
 .paint-2 {
   grid-area: p2;
   display: flex;
@@ -339,29 +256,11 @@ body {
   align-items: center;
 }
 
-.paint-2 .button-paint {
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.paint-2:hover .button-paint {
-  opacity: 1;
-}
-
 .paint-3 {
   grid-area: p3;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.paint-3 .button-paint {
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.paint-3:hover .button-paint {
-  opacity: 1;
 }
 
 .paint-4 {
@@ -372,13 +271,7 @@ body {
 }
 
 .paint-4 .button-paint {
-  opacity: 0;
-  transition: opacity 0.3s;
   transform: rotate(90deg);
-}
-
-.paint-4:hover .button-paint {
-  opacity: 1;
 }
 
 .paint-5 {
@@ -389,13 +282,7 @@ body {
 }
 
 .paint-5 .button-paint {
-  opacity: 0;
-  transition: opacity 0.3s;
   transform: rotate(90deg);
-}
-
-.paint-5:hover .button-paint {
-  opacity: 1;
 }
 
 .paint-6 {
@@ -405,29 +292,11 @@ body {
   align-items: center;
 }
 
-.paint-6 .button-paint {
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.paint-6:hover .button-paint {
-  opacity: 1;
-}
-
 .paint-7 {
   grid-area: p7;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.paint-7 .button-paint {
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.paint-7:hover .button-paint {
-  opacity: 1;
 }
 
 .paint-8 {
@@ -438,13 +307,7 @@ body {
 }
 
 .paint-8 .button-paint {
-  opacity: 0;
-  transition: opacity 0.3s;
   transform: rotate(90deg);
-}
-
-.paint-8:hover .button-paint {
-  opacity: 1;
 }
 
 .paint-9 {
@@ -452,16 +315,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.paint-9 .button-paint {
-  opacity: 0;
-  transition: opacity 0.3s;
-
-}
-
-.paint-9:hover .button-paint {
-  opacity: 1;
 }
 
 .testwhite1 {
