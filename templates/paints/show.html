@@ -8,32 +8,39 @@
   </style>
 </head>
 <body>
-{% extends 'base.html' %}
+  {% extends "paints/navbar.html" %}
 
 {% block content %}
-<section class="individual">
-  <h1 class="plaque" style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Name: {{ paint.name }}</h1>
-  <p class="plaque" style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Description: {{ paint.description }}</p>
-  <section class="button-group">
-  <p class="plaque" style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Value: {{ paint.value }} </p>
-  <p class="plaque" style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Offset: {{ paint.offset_value }}</p>
-  </section>
-  <br>
-  <p class="plaque" style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Popularity: {{paint.popularity}}</p>
-  <section class="button-group">
+<section class="individual-paint-page">
+  <div class="individualtext" style="background-color:{{paint.offset_value}}; color:{{paint.value}}">
+  <h1 style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Name: {{ paint.name }}</h1>
+  <span>
+    <span style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Value: {{ paint.value }} </span>
+    <span style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Offset: {{ paint.offset_value }}</span>
+</span>
+  <p style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Description: {{ paint.description }}</p>
+  <p style="background-color:{{paint.offset_value}}; color:{{paint.value}}">Popularity: {{paint.popularity}}</p>
+  <div class="button-group">
+    <div class="button1">
+    <form action="/paints/{{paint.id}}/increment" method="POST">
+      <input class="button" style="color:{{paint.value}}"type="submit" value="I like it!" id="increment" name="increment">
+    </form>
+  </div>
+  <div class="button2">
   <form action="/paints/{{paint.id}}/decrement" method="POST">
-    <input class="button" style="color:{{paint.offset_value}}" type="submit" value="I hate it!" id="decrement" name="decrement">
+    <input class="button" style="color:{{paint.value}}" type="submit" value="I hate it!" id="decrement" name="decrement">
   </form>
-  <form action="/paints/{{paint.id}}/increment" method="POST">
-    <input class="button" style="color:{{paint.offset_value}}"type="submit" value="I like it!" id="increment" name="increment">
-  </form>
-  <br>
-</section>
-  <a class="button" style="color:{{paint.offset_value}}; margin-bottom:0.5rem" href="/paints/{{paint.id}}/edit">Edit Paint</a>
+</div>
+  <div class="button3">
+  <a class="button" style="color:{{paint.value}};" href="/paints/{{paint.id}}/edit">Edit</a>
+</div>
+<div class="button4">
   <form action="{{paint.id}}/delete" method="POST">
-  <input class="button" style="color:{{paint.offset_value}}" type="submit" value="Delete">
+  <input class="button" style="color:{{paint.value}}" type="submit" value="Delete">
   </form>
+</div>
+</div>
+</div>
 </section>
 {% endblock %}
-
 </body>

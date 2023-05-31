@@ -4,39 +4,30 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
   {{ fontawesome_html() }}
 </head>
-<div class="indexcontainer">
-  <section class="indexsidebarmain">
-    <ul>
-      <li><a class="link" href="/"><i class="fas fa-circle"></i> Home</a></li>
-      <br>
-      <li><a class="link" href="/paints/new"><i class="fas fa-circle"></i> Add New Paint</a></li>
-      <br>
-      <li><a class="link" href="/paints"><i class="fas fa-circle"></i> View Top Paints</a></li>
-      <br>
-      <li><a class="link" href="/"><i class="fas fa-circle"></i> View All Paints</a></li>
-      <br>
-      <li><a class="link" href="/paints/about"><i class="fas fa-circle"></i> About</a></li>
-      <br>
-    </ul>
-    </section>
-    <section class="bigmains">
-  <section class="maintitle">
-    <h1><span class="fas fa-brush"></span> Paint Viewer</h1>
-  </section>
-<section class="mainpage">
+{% extends "paints/navbar.html" %}
+
+{% block content %}
+<section class="container">
   <form action="/paints/new" method="post">
-  <div class="plaque" style="text-align:center; background-color:#B05E00; color:white;">
-    <label for="name">Name:</label>
-    <input class="inputstyler" type="text" id="name" name="name" required><br><br>
-    <label for="description">Description:</label>
-    <input class="inputstyler" type="text" id="description" name="description"><br><br>
+  <div class="plaque" style="text-align:center; background-color:#ebac00; color:white;">
+    <div>
+    <label for="name">Name</label>
+    <input class="inputstyler" type="text" id="name" name="name" required>
+  </div>
+  <div>
+    <label for="description">Description</label>
+    <input class="inputstyler" type="text" id="description" name="description">
+  </div>
+  <div>
     <label for="value">Value</label>
-    <input class="inputstyler" type="color" id="colour-picker" name="colour-picker">
-    <br>
-    <br>
-    <input class="button" style type="submit" value="Submit">
+    <input class="inputstyler" type="color" id="colour-picker" style="background:white;" name="colour-picker">
+  </div>
+  <div>
+    <input class="button" style="color:white;" type="submit" value="Submit">
+  </div>
   </div>
   </form>
 </section>
 </section>
 </div> 
+{% endblock %}

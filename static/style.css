@@ -1,312 +1,379 @@
 body {
   margin: 0px;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  max-height: 100%;
   font-family: 'Raleway', sans-serif;
-  text-shadow: 1px 1px 1px black;
-  font-size: 1.7rem;
-}
-
-.indexcontainer {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  font-family: 'Raleway', sans-serif;
-  text-shadow: 1px 1px 1px black;
-  font-size: 1.7rem;
-}
-
-.paintpagecontainer{
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  font-family: 'Raleway', sans-serif;
-  text-shadow: 1px 1px 1px black;
-  /* font-size: 1.7rem; */
-}
-
-.sidebar {
-  width: 15vw;
-  height: 100vh;
-  padding: 20px;
-}
-
-.sidebar a {
-  text-decoration: none;
-}
-
-.main {
-  flex: 1;
-}
-
-.main a {
-  text-decoration: none;
-}
-
-.main h1 {
-  margin: 1rem;
-}
-
-.indexsidebar {
-  width: 15vw;
-  height: 100%;
-  padding: 2rem;
-  background-color: #B05E00;
-  color: white;
-  font-family: 'Raleway', sans-serif;
-  box-shadow: inset 0 0 0 0px black;
-}
-
-.indexsidebar a {
-  color: white;
-  text-decoration: none;
-}
-
-.indexsidebar ul {
-  margin-top: 1rem;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.indexsidebarmain {
-  align-items: stretch;
-  padding-left: 2rem;
-  padding-top: 2rem;
-  padding-right: 2rem;
-  background-color: #B05E00;
-  color: white;
-  font-family: 'Raleway', sans-serif;
-  box-shadow: 0 0 1px 1px black;
-}
-
-.indexsidebarmain a {
-  color: white;
-  text-decoration: none;
-}
-
-.indexsidebarmain ul {
-  margin-top: 1rem;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  font-size: 1rem;
-}
-
-.indexmain {
-  flex: 3;
-  background-color: white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  font-family: 'Raleway', sans-serif;
-}
-
-.indexmain a {
-  color: darkgoldenrod;
-  text-decoration: none;
-}
-
-.toppaintsmain {
-  flex: 3;
-  background-color: white;
-  display: flex;
-  flex-wrap: wrap;
-  height: 100%;
-  min-height: 100%;
-  justify-content: space-between;
-  font-family: 'Raleway', sans-serif;
-}
-
-.toppaintsmain a {
-  color: darkgoldenrod;
-  text-decoration: none;
-}
-
-.paintsquare {
-  flex-basis: calc(33.33%);
-  background-color: darkgoldenrod;
-  position: relative;
-  margin: 0;
-  box-shadow: 0 0 0 4px black;
-}
-
-.paintsquare a {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.button {
-  border: 4px;
-  border-style: solid;
-  border-radius: 5px;
-  box-shadow: 1px 1px black;
-  background: none;
-  padding: 4px;
-  margin: 4px;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.5rem;
-  text-shadow: 1px 1px 1px black;
-}
-
-.button:hover {
-  background: white;
-}
-
-.plaque {
-  border-radius: 5px;
-  box-shadow: 1px 1px black;
-  background: none;
-  padding: 0.8rem;
-  margin: 0.8rem;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.5rem;
-  text-shadow: 1px 1px 1px black;
-}
-
-.editplaque {
-  border-radius: 5px;
-  box-shadow: 1px 1px black;
-  background: none;
-  padding: 2rem;
-  margin: 2rem 10rem;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.5rem;
-  text-shadow: 1px 1px 1px black;
-}
-
-.inputstyler {
-  border-radius: 5px;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1rem;
-  background-color: white;
-}
-
-.individual {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0px;
-}
-
-.button-group {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: -0.8rem;
 }
 
 .link:hover {
   color: #F44336;
 }
 
-.interiorlink:hover {
-  color: white !important;
-}
+/* HEADER CLASSES */
 
-.fas.fa-brush {
-  font-size: 2.9rem;
-}
-
-.fas.fa-circle {
-  font-size: 0.7rem;
-}
-
-.bigmainstoppaints {
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  margin: auto;
-  margin-top: 0rem;
-}
-
-.maintitle {
-  text-align: center;
-  font-size: 3rem;
-  color: #B05E00;
-
-}
-
-.maintitle fas {
-  font-size: 4rem;
-}
-
-.maintitle:hover {
-  color: #F44336;
-}
-
-.bigmains {
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  margin: auto;
-  margin-top: 0rem;
-}
-
-.mainpage {
-  justify-content: center;
-  align-items: center;
-  font-size: 4rem;
-  margin-top: 1rem;
-  color: #B05E00;
-}
-
-.indexmaintext {
-  font-size: 1.5rem;
-  text-align: center;
-  margin: auto;
-  color: #B05E00;
-}
-
-.aboutmaintext {
-  font-size: 1.5rem;
-  text-align: center;
-  margin: auto;
-  padding-inline: 6rem;
-  color: black;
-  text-shadow: none;
-}
-
-.aboutcontainer {
+.navbar {
+  background: #ebac00;
   display: flex;
-  flex-direction: row;
-  font-family: 'Raleway', sans-serif;
-  text-shadow: 1px 1px 1px black;
-  font-size: 1.7rem;
-}
-
-.aboutsidebar {
-  align-items: stretch;
-  padding-left: 2rem;
-  padding-top: 2rem;
-  padding-right: 2rem;
-  width: 35vw;
-  background-color: #B05E00;
-  color: white;
-  font-family: 'Raleway', sans-serif;
-  box-shadow: 0 0 1px 1px black;
-}
-
-.aboutsidebar a {
-  color: white;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-bottom: 0.5rem;
   text-decoration: none;
+  font-size: 1.5rem;
 }
 
-.aboutsidebar ul {
-  margin-top: 1rem;
+.navbar a {
+  text-decoration: none;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  color:white;
   font-size: 1rem;
 }
+
+.navbar h1 {
+  color: white;
+  text-align: center;
+}
+
+.navbar-seperator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/* MAIN BODY CLASSES */
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.container-all-paints {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2.5%;
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1%;
+  width: 50%;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1%;
+  width: 70%;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.individual-paint-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  width: 40%;
+  margin-inline: auto;
+  margin-top: 1rem;
+}
+
+.individualtext {
+  text-align: center;
+}
+
+.individualtext h1,
+.individualtext p {
+  margin-block: 0.5rem; 
+}
+
+.top-paints-main {
+  display: flex;
+  justify-content: center;
+}
+
+/* BUTTONS */
+
+.button-group {
+  display: grid;
+  justify-content: center;
+  align-items: baseline;
+  justify-items: center;
+  margin-top: 5%;
+  padding-bottom: 2.5%;
+  grid-template-areas:
+  'b1 b2'
+  'b3 b4';
+}
+
+.button-group-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-group-top {
+  display: flex;
+  flex-direction: row;
+}
+
+.button1 {
+  grid-area: b1;
+}
+
+.button2 {
+  grid-area: b2;
+}
+
+.button-group-bottom {
+  display: flex;
+  flex-direction: row;
+}
+
+.button3 {
+  grid-area: b3;
+}
+
+.button4 {
+  grid-area: b4;
+}
+
+.button {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  background: none;
+  border: none;
+}
+
+.button input {
+  border: none;
+}
+
+.button-paint {
+  background: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.button-paint:hover {
+  opacity: 1;
+}
+
+/* BODY SPECIFICS */
+
+.plaque {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plaque div {
+  display: flex;
+  flex-direction: column;
+  margin-block: 0.5rem;
+}
+
+.plaque label {
+  margin-bottom: 0.25rem;
+}
+
+.editplaque {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.paintsquare {
+  position: relative;
+  margin: 0;
+  text-align: center;
+  width: 70%;
+}
+
+.paintsquare a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.inputstyler {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  background-color: white;
+  border: none;
+  margin-top: 0.5rem;
+}
+
+
+/* THE GRID */
+
+.paint-grid {
+  display: grid;
+  grid-template-areas:
+  'w1 w2 w2 w2 p3 p3 p3'
+  'w3 p1 p1 p1 p2 p2 p2'
+  'w3 p1 p1 p1 p2 p2 p2'
+  'w4 p1 p1 p1 w5 w5 w6'
+  'w4 p4 w7 w7 w8 w8 w8'
+  'p5 p4 w9 w9 p6 p6 p6'
+  'p5 wa p7 p7 p6 p6 p6'
+  'p5 wa p8 wb p9 p9 p9'
+  'wc wc p8 wb p9 p9 p9';
+  grid-template-rows: repeat(9, 8.5vh);
+  grid-template-columns: repeat(7, 5.75vw);
+  gap: 0.35rem;
+  background: #2b2b2b;
+  padding: 0.7rem;
+  justify-content: center;
+  margin-block: 2.5%;
+}
+
+.paint-1 {
+  grid-area: p1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paint-2 {
+  grid-area: p2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paint-3 {
+  grid-area: p3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paint-4 {
+  grid-area: p4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paint-4 .button-paint {
+  transform: rotate(90deg);
+}
+
+.paint-5 {
+  grid-area: p5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paint-5 .button-paint {
+  transform: rotate(90deg);
+}
+
+.paint-6 {
+  grid-area: p6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paint-7 {
+  grid-area: p7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paint-8 {
+  grid-area: p8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paint-8 .button-paint {
+  transform: rotate(90deg);
+}
+
+.paint-9 {
+  grid-area: p9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testwhite1 {
+  grid-area: w1;
+  background: white;
+}
+
+.testwhite2 {
+  grid-area: w2;
+  background: white;
+}
+
+.testwhite3 {
+  grid-area: w3;
+  background: black;
+}
+
+.testwhite4 {
+  grid-area: w4;
+  background: white;
+}
+
+.testwhite5 {
+  grid-area: w5;
+  background: white;
+}
+
+.testwhite6 {
+  grid-area: w6;
+  background: black;
+}
+
+.testwhite7 {
+  grid-area: w7;
+  background: black;
+}
+
+.testwhite8 {
+  grid-area: w8;
+  background: white;
+}
+
+.testwhite9 {
+  grid-area: w9;
+  background: white;
+}
+
+.testwhitea {
+  grid-area: wa;
+  background: white;
+}
+
+.testwhiteb {
+  grid-area: wb;
+  background: white;
+}
+
+.testwhitec {
+  grid-area: wc;
+  background: black;
+}
+

@@ -1,32 +1,15 @@
-<head>
-  <title>Paints</title>
-  <link rel="stylesheet" href="/static/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
-  {{ fontawesome_html() }}
-</head>
-<div class="indexcontainer">
-  <section class="indexsidebarmain">
-    <ul>
-      <li><a class="link" href="/"><i class="fas fa-circle"></i> Home</a></li>
-      <br>
-      <li><a class="link" href="/paints/new"><i class="fas fa-circle"></i> Add New Paint</a></li>
-      <br>
-      <li><a class="link" href="/paints"><i class="fas fa-circle"></i> View Top Paints</a></li>
-      <br>
-      <li><a class="link" href="/paints/all"><i class="fas fa-circle"></i> View All Paints</a></li>
-      <br>
-      <li><a class="link" href="/paints/about"><i class="fas fa-circle"></i> About</a></li>
-      <br>
-    </ul>
-    </section>
-    <section class="bigmains">
-  <section class="maintitle">
-    <h1><span class="fas fa-brush"></span> Paint Viewer</h1>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Piet_Mondriaan_-_03.jpg?20150102110155" alt="" height="300vh" width="auto">
-  </section>
-<div class="indexmaintext">
-  <p>Do not use chatGPT for CSS advice. Use inspect.</p>
-  </div>
+{% extends "paints/navbar.html" %}
+
+{% block content %}
+
+<section class="home-page">
+  <h1>Version 2.0</h1>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Piet_Mondriaan_-_03.jpg?20150102110155" alt="" height="300vh" width="auto">
+  <h2>Welcome to Paint Viewer!</h2>
+  <h4>Manual</h4>
+  <p>Why not start by adding a new paint? This is the second button from the left in the navbar.</p>
+  <p>Once you've filled out the form you will be directed to View Top Paints, the middle item in the navbar. Depending on the state of the Database, your paint may not be here at this stage, but fret not! Navigate to View All Paints and you will find it in the flag. Hover over your paint and the button will present itself.</p>
+  <p>You can now vote on the popularity of the paint. Each click will navigate you back to View Top Paints so you can see whether or not your paint has made it.</p>
+  <p>You will also be presented with an option to edit your paint in this page. You can alter the name, the description and the primary/offset colours.</p>
 </section>
-</div> 
-</section>
+{% endblock %}

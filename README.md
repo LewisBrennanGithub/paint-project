@@ -20,4 +20,14 @@ ADVANCED EXTENSION:
 - The main page colour will be used to offset the navbar colour. 
 - The nav-bar text will reflect the body colour, and the body text will reflect the nav-bar colour.
 - Users can vote for their favourite colour, and this will be represented as the default page colour.
-- (HARD - also possibly rubbish) Possibly allow multiple colours on page at a time, with the navbar reflected. Only one colour for each text, the left-most/first colour to be selected.
+- Possibly allow multiple colours on page at a time, with the navbar reflected. Only one colour for each text, the left-most/first colour to be selected.
+
+RUN THE PROGRAMME
+
+- Open a terminal session
+- Clone the repository
+- Requires: flask / psychopg2 (pip3 psychopg2) / postgres 
+- dbcreate paints
+- To set up seed data, run psql -d paints -f paints.sql
+- Navigate to main and type flask run
+- In the browser use the url: "localhost:4999" 
