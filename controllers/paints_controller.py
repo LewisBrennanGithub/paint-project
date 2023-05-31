@@ -6,11 +6,7 @@ import repositories.paint_repository as paint_repository
 paints_blueprint = Blueprint("paints", __name__)
 
 @paints_blueprint.route("/paints")
-<<<<<<< HEAD
-def main():
-=======
 def top_paints():
->>>>>>> justincase
     paints = paint_repository.list_paints_limited() 
     return render_template("paints/index.html", paints = paints)
 
@@ -53,13 +49,7 @@ def edit_paint_page(id):
     paint = paint_repository.select(id)
     return render_template('paints/edit.html', paint=paint, id=id)
 
-<<<<<<< HEAD
-# UPDATE
-# PUT '/books/<id>'
-@paints_blueprint.route("/paints/<id>/edit", methods=['GET', 'POST'])
-=======
 @paints_blueprint.route("/paints/<int:id>/edit", methods=['POST'])
->>>>>>> justincase
 def update_paint(id):
     name = request.form['name']
     description = request.form['description']
@@ -82,3 +72,5 @@ def decrement_paint(id):
 def increment_paint(id):
     paint_repository.increment_paint_popularity(id)
     return redirect('/paints')
+
+

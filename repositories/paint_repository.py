@@ -48,9 +48,6 @@ def list_paints_limited():
     sql = "SELECT * FROM paints ORDER BY popularity DESC LIMIT 9"
     results = run_sql(sql)
     for row in results:
-<<<<<<< HEAD
-        paint = Paint(row['name'], row['description'], row['value'], row['offset_value'], row['offset_override'], row['popularity'], row['id'])
-=======
         paint = Paint(row['name'], row['description'], row['value'], row['offset_value'], row['popularity'], row['id'])
         paints.append(paint)
     return paints
@@ -61,7 +58,6 @@ def list_all_paints():
     results = run_sql(sql)
     for row in results:
         paint = Paint(row['name'], row['description'], row['value'], row['offset_value'], row['popularity'], row['id'])
->>>>>>> justincase
         paints.append(paint)
     return paints
 
