@@ -12,12 +12,8 @@
   {% block content %}
   <section class="container-all-paints">
   {% for paint in paints %}
-  <!-- <div class="paintsquarebackgroundenabler"> -->
-  <div class="paintsquareouter">
   <div class="paintsquare" style="background-color:{{paint.value}}">
-    <a class="button" href="/paints/{{paint.id}}" style="color:{{paint.offset_value}}">{{paint.name}}</a>
-    <!-- </div> -->
-  </div>
+    <a class="button-paint-all" href="/paints/{{paint.id}}" style="color:{{paint.offset_value}}">{{paint.name}}</a>
 </div>
 {% endfor %}
 {% endblock %}

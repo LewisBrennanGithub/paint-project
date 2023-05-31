@@ -11,31 +11,44 @@ body {
 
 .container-all-paints {
   display: flex;
-  flex-wrap: wrap;
-  height: 100%;
-  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2.5%;
 }
 
-/* .paintsquarebackgroundenabler {
-  background: #2b2b2b;
-  flex: 0 0 calc(25%); 
-} */
-
-.paintsquareouter {
-  flex: 0 0 calc(25%); 
+.home-page {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: white;
-  border: 5px solid black;
+  margin-top: 1%;
+  width: 50%;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1%;
+  width: 70%;
+  margin-inline: auto;
+  text-align: left;
 }
 
 .paintsquare {
   position: relative;
   margin: 0;
   text-align: center;
-  width: 75%;
-  height: 75%;
+  width: 70%;
+}
+
+.button-paint-all {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.button-paint-all:hover {
+  opacity: 1;
 }
 
 .paintsquare a {
@@ -45,7 +58,7 @@ body {
 }
 
 .navbar {
-  background: black;
+  background: #ebac00;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -89,26 +102,13 @@ body {
   margin-bottom: 0.25rem;
 }
 
-.indexmain {
-  flex: 3;
-  background-color: white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  font-family: 'Raleway', sans-serif;
-}
-
-.indexmain a {
-  color: darkgoldenrod;
-  text-decoration: none;
-}
-
-
 .button-group {
   display: grid;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
+  justify-items: center;
   margin-top: 5%;
+  padding-bottom: 2.5%;
   grid-template-areas:
   'b1 b2'
   'b3 b4';
@@ -153,14 +153,14 @@ body {
   text-align: center;
   height: 100%;
   width: 100%;
-  display: inline-block; /* or block */
+  display: inline-block;
   background: none;
   border: none;
 }
 
-/* .button a {
-  display: none; /* or block */
-
+.button input {
+  border: none;
+}
 .button:hover {
 }
 
@@ -176,14 +176,10 @@ body {
 }
 
 .editplaque {
-  border-radius: 5px;
-  box-shadow: 1px 1px black;
-  background: none;
   padding: 2rem;
-  margin: 2rem 10rem;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.5rem;
-  text-shadow: 1px 1px 1px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .inputstyler {
@@ -191,6 +187,7 @@ body {
   font-size: 1rem;
   background-color: white;
   border: none;
+  margin-top: 0.5rem;
 }
 
 .individual {
@@ -239,7 +236,6 @@ body {
 .mainpage {
   justify-content: center;
   align-items: center;
-  /* margin-left: 6.8rem; */
   font-size: 4rem;
   margin-top: 1rem;
   color: #B05E00;
