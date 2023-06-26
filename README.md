@@ -27,7 +27,7 @@ RUN THE PROGRAMME
 - Open a terminal session
 - Clone the repository
 - Requires: flask / psychopg2 (pip3 psychopg2) / postgres 
-- dbcreate paints
+- createdb paints
 - To set up seed data cd into the db folder and use the following command: "psql -d paints -f paints.sql"
 - Navigate back to main and type flask run
 - In the browser use the url: "localhost:4999" 
