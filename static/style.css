@@ -1,16 +1,22 @@
+/* ALTERNATIVE COLOR OPTIONS */
+/* OLIVE GREEN > #526901 */
+/* FIERY RED/ORANGE > #d92f00 */
+/* PURPLE > #66014b */
+/* MAROON > #750132 */
+
 body {
   margin: 0px;
   font-family: 'Raleway', sans-serif;
 }
 
 .link:hover {
-  color: #F44336;
+  color: #7a015a;
 }
 
 /* HEADER CLASSES */
 
 .navbar {
-  background: #ebac00;
+  background: #d92f00;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
