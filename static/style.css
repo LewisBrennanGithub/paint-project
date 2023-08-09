@@ -239,8 +239,8 @@ body {
   'p5 wa p7 p7 p6 p6 p6'
   'p5 wa p8 wb p9 p9 p9'
   'wc wc p8 wb p9 p9 p9';
-  grid-template-rows: repeat(9, 8.5vh);
-  grid-template-columns: repeat(7, 5.75vw);
+  grid-template-rows: repeat(9, 7.0vh);
+  grid-template-columns: repeat(7, 4.75vw);
   gap: 0.35rem;
   background: #2b2b2b;
   padding: 0.7rem;
