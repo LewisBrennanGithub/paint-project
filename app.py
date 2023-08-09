@@ -1,11 +1,8 @@
 from flask import Flask, render_template
-# from flask_fontawesome import FontAwesome
 
 from controllers.paints_controller import paints_blueprint
 
-
 app = Flask(__name__)
-# fa = FontAwesome(app)
 
 app.register_blueprint(paints_blueprint)
 
